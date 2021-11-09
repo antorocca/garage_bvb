@@ -1,0 +1,217 @@
+:root{
+    --base-yellow: #fff000;
+    --base-txt-color: #292929;
+    --base-grey: #d4d4d4;
+    --marg-top-element: 2vh; /* ? */
+}
+body{
+    font-family: 'Lato', sans-serif;
+}
+
+p{
+    color:var(--base-txt-color);
+}
+
+/***************HEADER.PHP***************/
+header{
+    background:var(--base-yellow);
+}
+
+header>div{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/*slogan*/
+header>div>h1{
+    margin:0;
+    font-family: 'Dancing Script', cursive;
+    text-align:center;
+    width: 20%;
+    cursor:default;
+}
+/*logo*/
+.header-logo{
+    width: 20%;
+    text-align: center;
+}
+
+.header-logo>a>img{
+    width:35%;
+    margin:1vh 0;
+    transition:0.2s;
+    border-radius:50%;
+}
+
+.header-logo>a>img:hover{
+    transform:scale(1.07);
+    -webkit-box-shadow: 0px 8px 7px -1px rgba(0,0,0,0.70); 
+    box-shadow: 0px 8px 7px -1px rgba(0,0,0,0.70);
+}
+/*inscription button*/
+.header-Rbutton{
+    width: 20%;
+    text-align:center;
+}
+
+.header-Rbutton>a{
+    text-decoration: none;
+    color:var(--base-yellow);
+    background:black;
+    padding:1.5vh 1vw;
+    transition:0.2s;
+    display:block;
+    width:max-content;
+    margin:0 auto;
+    width:30%;
+    font-weight:bold;
+}
+.header-Rbutton>a:first-child{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border:1px solid var(--base-yellow);
+}
+.header-Rbutton>a:last-child{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border:1px solid var(--base-yellow);
+}
+
+.header-Rbutton>a:hover{
+    /* transform:scale(1.07);
+    -webkit-box-shadow: 0px 8px 7px -4px rgba(0,0,0,0.70); 
+    box-shadow: 0px 8px 7px -4px rgba(0,0,0,0.70); */
+    background-color: var(--base-yellow);
+    color:black;
+    border:1px solid black;
+}
+/*navbar*/
+header>nav{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background:black;
+}
+
+header>nav>a{
+    padding:0.5vh 0;
+    margin:3px 0.5vw;
+    width:15%;
+    color:var(--base-yellow);
+    text-decoration:none;
+    text-align:center;
+    font-weight:600;
+}
+
+header>nav>a:hover{
+    box-sizing: border-box;
+    border:1px solid var(--base-yellow);
+    margin: 1px 0.5vw;
+}
+
+
+
+/***************FOOTER.PHP***************/
+footer{
+    background:black;
+    display:flex;
+    justify-content: center;
+    align-items:flex-start;
+    padding:1vh 0;
+    margin-top:2vh;
+}
+
+footer>div{
+    display:flex;
+    flex-direction:column;
+    width: 15%;
+}
+
+footer a, footer h4{
+    color:var(--base-yellow);
+}
+
+footer h4{
+    margin:0;
+    cursor:default;
+    text-decoration:underline;
+}
+
+footer a{
+    text-decoration:none;
+    margin:0.2vh 0;
+    display:inline;
+}
+footer a:hover{
+    font-weight:bold;
+}
+
+footer * {
+    font-family: 'Lato', sans-serif;
+}
+/*****************************************************/
+/*********************RESPONSIVE*********************/
+/***************************************************/
+
+/************HEADER.php*************/
+@media screen and (max-width: 1306px) {
+    /*header*/
+    header>nav>a{
+        width:20%;
+    }
+    header>div>h1{
+        margin:0.5vh 0;
+    }
+    .header-logo>a>img{
+        width:43%;
+    }
+
+    /*footer*/
+    footer>div{
+        width: 20%;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    /*header*/
+    header>div>h1{
+        width: 25%;
+        font-size:23px;
+    }
+    .header-logo{
+        width: 25%;
+    }
+    .header-Rbutton{
+        width: 25%;
+        font-size:13px;
+    }
+    header>nav>a{
+        font-size:13px;
+    }
+    /*footer*/
+    footer a{
+        font-size:13px;
+    }
+    footer h4{
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    /*header*/
+    header>nav>a{
+        width:25%;
+    }
+    .header-logo>a>img{
+        width:43%;
+    }
+    /*footer*/
+    footer>div{
+        width: 21%;
+    }
+}
+
+@media screen and (max-width: 670px) {
+    /*header*/
+    /*navbar -> burger menu */
+}
