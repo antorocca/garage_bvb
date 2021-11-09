@@ -24,10 +24,3 @@
         </footer>
     </body>
 </html>
-
-
-
-
-
-
-
