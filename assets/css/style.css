@@ -1,6 +1,6 @@
 :root{
-    --base-yellow: #ddce00;
-    --base-txt-color: #292929;
+    --base-yellow: #FFD900;
+    --base-txt-color: #000000;
     --base-grey: #d4d4d4;
     --marg-top-element: 2vh; /* ? */
 }
@@ -9,9 +9,6 @@ body{
     background: var(--base-grey);
 }
 
-p{
-    color:var(--base-txt-color);
-}
 
 /***************HEADER.PHP***************/
 header{
@@ -58,13 +55,13 @@ header>div>h1{
 .header-Rbutton>a{
     text-decoration: none;
     color:var(--base-yellow);
-    background:black;
+    background:var(--base-txt-color);
     padding:1.5vh 1vw;
     transition:0.2s;
     display:block;
     width:max-content;
     margin:0 auto;
-    width:30%;
+    width:35%;
     font-weight:bold;
 }
 .header-Rbutton>a:first-child{
@@ -79,11 +76,8 @@ header>div>h1{
 }
 
 .header-Rbutton>a:hover{
-    /* transform:scale(1.07);
-    -webkit-box-shadow: 0px 8px 7px -4px rgba(0,0,0,0.70); 
-    box-shadow: 0px 8px 7px -4px rgba(0,0,0,0.70); */
     background-color: var(--base-yellow);
-    color:black;
+    color:var(--base-txt-color);
     border:1px solid black;
 }
 /*navbar*/
@@ -91,7 +85,7 @@ header>nav{
     display:flex;
     justify-content: center;
     align-items: center;
-    background:black;
+    background:var(--base-txt-color);
 }
 
 header>nav>a{
@@ -112,34 +106,34 @@ header>nav>a:hover{
 
 /***************INDEX.PHP***************/
 /*first section (image)*/
-.sub-header{}
-/*1st image*/
-.sub-header>div:first-child{
-    height:60vh;
+.garage{
+    /* height:60vh; */
     background:no-repeat 50% 60% url(../pictures/garageBVB.jpg);
     background-size:100%;
-    box-shadow: inset 2000px 0 0 0 rgba(131, 111, 0, 0.322);display:flex;
+    box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.322);display:flex;
     justify-content:right;
     align-items: center;
 }
-
+/*1st image*/
 .sh-txt{
-    width:40%;
-    padding:1vh 2vw;
-    background: rgba(255, 217, 0, 0.555);
+    width:25%;
+    padding:3vh 2vw;
+    margin:10vh 0;
+    background: rgba(255, 217, 0, 0.9);
     border-top-left-radius:10px;
     border-bottom-left-radius:10px;
     border:2px solid black;
     border-right:none;
+    cursor: default;
 }
 
-.sub-header>div:first-child>div>h2{
+.garage>div>h2{
     margin-top:0;
     text-decoration:underline;
 }
-.sub-header>div:first-child>div>p{
+.garage>div>p{
     font-weight:bold;
-    color:black;
+    color:var(--base-txt-color);
 }
 /* 2nd image
 .sub-header>div:nth-child(2){
@@ -151,9 +145,55 @@ header>nav>a:hover{
 }
 4th image
 .sub-header>div:last-child{} */
+
+/*2nd section (partner)*/
+
+.partner{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    padding:1vh 0;
+}
+
+.partner>img{
+    width:20%;
+}
+
+/*3rd section (concession)*/
+.concession{
+    background:no-repeat 50% 60% url(../pictures/voiture.jpg);
+    height:60vh;
+    background-size:100%;
+    box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.322);
+    display:flex;
+    justify-content:left;
+    align-items: center;
+}
+
+.c-txt{
+    width:25%;
+    padding:3vh 2vw;
+    background: rgba(255, 217, 0, 0.9);
+    border:2px solid black;
+    border-left:none;
+    border-top-right-radius:10px;
+    border-bottom-right-radius:10px;
+    cursor: default;
+}
+
+.concession>p{
+    margin:0;
+}
+
+/*4th section (contact)*/
+.contact{
+    width:90%;
+    margin:0 auto;
+    background:black;
+}
 /***************FOOTER.PHP***************/
 footer{
-    background:black;
+    background:var(--base-txt-color);
     display:flex;
     justify-content: center;
     align-items:flex-start;
@@ -189,6 +229,21 @@ footer a:hover{
 footer * {
     font-family: 'Lato', sans-serif;
 }
+
+
+
+
+
+.garage>img{
+    display:none;
+}
+
+
+
+
+
+
+
 /*****************************************************/
 /*********************RESPONSIVE*********************/
 /***************************************************/
@@ -205,7 +260,13 @@ footer * {
     .header-logo>a>img{
         width:43%;
     }
-
+    .header-Rbutton>a{
+        width:50%;
+    }
+    /*index.php*/
+    .sh-txt{
+        width:30%;
+    }
     /*footer*/
     footer>div{
         width: 20%;
@@ -228,6 +289,13 @@ footer * {
     header>nav>a{
         font-size:13px;
     }
+    /*index.php*/
+    .sh-txt>h2{
+        font-size:20px;
+    }
+    .sh-txt>p{
+        font-size: 13px;
+    }
     /*footer*/
     footer a{
         font-size:13px;
@@ -245,13 +313,133 @@ footer * {
     .header-logo>a>img{
         width:43%;
     }
+    /*index.php*/
+    .sh-txt{
+        margin:5vh 0;
+    }
     /*footer*/
     footer>div{
         width: 21%;
     }
 }
 
-@media screen and (max-width: 670px) {
+@media screen and (max-width: 704px) {
     /*header*/
     /*navbar -> burger menu */
+    .header-Rbutton>a{
+        padding: 1vh 1vw;
+    }
+    /*index.php*/
+    
+
+
+
+
+    .garage{
+        flex-direction:column;
+        justify-content:center;
+        /* background:no-repeat url(../pictures/garageBVB2.jpg); */
+        background:none;
+        background-size:cover;
+        background-position:50% 100%;
+        box-shadow:none;
+    }
+    .sh-txt{
+        width:90%;
+        margin:0 auto;
+        padding:1.5vh 1vw;
+        background: rgba(255, 217, 0, 1);
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border:2px solid black;
+        border-top:none;
+    }
+    .garage>img{
+        display:block;
+        width:92%;
+        margin:2vh auto 0 auto;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        border:2px solid black;
+        border-bottom:none;
+
+    }
+
+
+
+
+
+
+
 }
+
+@media screen and (max-width: 600px) {
+}
+
+.garage-resp{
+    display:none;
+}
+/*.garage{
+    background:no-repeat 50% 60% url(../pictures/garageBVB.jpg);
+    background-size:100%;
+    box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.322);display:flex;
+    justify-content:right;
+    align-items: center;
+}
+
+.sh-txt{
+    width:25%;
+    
+    margin:10vh 0;
+    background: rgba(255, 217, 0, 0.9);
+    border-top-left-radius:10px;
+    border-bottom-left-radius:10px;
+    border:2px solid black;
+    border-right:none;
+    cursor: default;
+}
+
+.garage>div>h2{
+    margin-top:0;
+    text-decoration:underline;
+}
+.garage>div>p{
+    font-weight:bold;
+    color:var(--base-txt-color);
+}*/
+
+
+
+
+
+
+
+/*method 1
+.garage{
+    display:none;
+}
+
+.garage-resp{
+    font-size:11px;
+    width:95%;
+    margin:2vh auto 0 auto;
+    display:flex;
+    background:white;
+    border-radius: 5px;
+}
+.garage-resp>div:first-child{
+    width:45%;
+    margin: 0 5%;
+}
+.garage-resp>div:last-child{
+    width: 45%;
+    margin: 0 5%;
+}
+.garage-resp>div:last-child>img{
+    width: 100%;
+    border-radius: 5px;
+    margin:0.5vh 0;
+    border:2px solid var(--base-yellow);
+}*/
