@@ -107,90 +107,260 @@ header>nav>a:hover{
 /***************INDEX.PHP***************/
 /*first section (image)*/
 .garage{
-    /* height:60vh; */
     background:no-repeat 50% 60% url(../pictures/garageBVB.jpg);
     background-size:100%;
     box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.322);display:flex;
     justify-content:right;
     align-items: center;
-}
-/*1st image*/
-.sh-txt{
-    width:25%;
-    padding:3vh 2vw;
-    margin:10vh 0;
-    background: rgba(255, 217, 0, 0.9);
-    border-top-left-radius:10px;
-    border-bottom-left-radius:10px;
-    border:2px solid black;
-    border-right:none;
-    cursor: default;
+    transition:0.2s;
 }
 
-.garage>div>h2{
+/*responsive img*/
+.garage>img{
+    display:none;
+}
+/*txt + button*/
+.sh-txt{
+    line-height:150%;
+    width:35%;
+    padding:7vh 2vw;
+    margin:0 0;
+    background: rgba(255, 217, 0, 0.65);
+    cursor: default;
+    clip-path: polygon(30% 0, 100% 0%, 100% 100%, 0% 100%);
+    transition:0.2s;
+}
+.garage:hover>.sh-txt{
+    background: rgba(255, 217, 0, 0.85);
+}
+
+.sh-txt>h2, .sh-txt>p{
+    margin-left:30%;
+}
+.sh-txt>h2{
     margin-top:0;
     text-decoration:underline;
 }
-.garage>div>p{
+.sh-txt>p{
     font-weight:bold;
     color:var(--base-txt-color);
 }
-/* 2nd image
-.sub-header>div:nth-child(2){
-    background: url(../pictures/garagiste1.0.jpeg);
+.sh-txt>a, .c-txt>a{/* garage div + concessionnaire div button*/
+    text-decoration:none;
+    background-color:black;
+    color:var(--base-yellow);
+    margin:3vh 0 2vh 30%;
+    border-radius:5px;
+    display:block;
+    width: 40%;
+    text-align:center;
+    padding:1vh 0;
+    border:1px solid black;
+    box-sizing:border-box;
+    transition:0.2s;
 }
-3rd image
-.sub-header>div:nth-child(3){
-    background: url(../pictures/pneu.jpg);
+.sh-txt>a:hover,.c-txt>a:hover{/* garage div + concessionnaire div button*/
+    background-color: var(--base-yellow);
+    color:var(--base-txt-color);
+    border:1px solid black;
+    
 }
-4th image
-.sub-header>div:last-child{} */
 
 /*2nd section (partner)*/
-
 .partner{
     display:flex;
     justify-content: space-around;
     align-items: center;
     padding:1vh 0;
 }
-
 .partner>img{
     width:20%;
 }
 
 /*3rd section (concession)*/
+/*responsive img ↓ */
+.concession>img{
+    display:none;
+}
 .concession{
     background:no-repeat 50% 60% url(../pictures/voiture.jpg);
-    height:60vh;
     background-size:100%;
     box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.322);
     display:flex;
     justify-content:left;
     align-items: center;
 }
-
-.c-txt{
-    width:25%;
-    padding:3vh 2vw;
-    background: rgba(255, 217, 0, 0.9);
-    border:2px solid black;
-    border-left:none;
-    border-top-right-radius:10px;
-    border-bottom-right-radius:10px;
-    cursor: default;
+.concession:hover>.c-txt{
+    background: rgba(255, 217, 0, 0.85);
 }
+.c-txt{
+    line-height:150%;
+    width:35%;
+    padding:7vh 2vw;
+    margin:0 0;
+    background: rgba(255, 217, 0, 0.65);
+    cursor: default;
+    clip-path: polygon(0 0, 71% 0, 100% 100%, 0 100%);
+    transition:0.2s;
+}
+.c-txt>p, .c-txt>p{
+    margin-right:30%;
+}
+.c-txt>h2{
+    text-decoration:underline;
+}
+.c-txt>p{
+    font-weight:bold;
+}
+.c-txt>a{
+    margin:3vh 30% 2vh 0;
+    }
 
-.concession>p{
+/*5th section (contact)*/
+.contact{
+    margin:0 auto;
+    background:no-repeat 50% 60% url(../pictures/garage2.jpg);
+    display:flex;
+    justify-content: space-between;
+}
+.contact:hover>.open-time{
+    background: rgba(255, 217, 0, 0.85);
+}
+.contact>iframe{
+    margin:2vh 0 2vh 2vw;
+    border-radius: 5px;
+}
+/*opening-time in contact div */
+.open-time{
+    line-height:150%;
+    width:35%;
+    padding:4vh 2vw;
+    margin:0 0;
+    background: rgba(255, 217, 0, 0.65);
+    cursor: default;
+    clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+    transition:0.2s;
+}
+.open-time>h2{
+    margin-left:30%;
+    text-decoration:underline;
+}
+.open-time>div{
+    display:flex;
+    
+}
+.week>div{
+    display:flex;
+    flex-direction:column;
+}
+.week>div:first-child{
+    margin-left:30%;
+}
+.week>div:last-child{
+    margin-left:10%;
+}
+.week>div>p, .week>div>h2{
+    color:var(--base-txt-color);
+    font-weight:bold;
+    display:inline;
     margin:0;
 }
-
-/*4th section (contact)*/
-.contact{
-    width:90%;
-    margin:0 auto;
-    background:black;
+/*address in contatc div*/
+.address{
+    display:flex;
 }
+.address>div:first-child{
+    margin-left:30%;
+}
+.address>div:last-child{
+    margin-left:10%;
+}
+.address>div>p{
+    margin:0;
+    font-weight: bold;
+}
+
+/***************CONNEXION.PHP***************/
+.connexion{
+    width:25%;
+    margin:3vh auto;
+    background:white;
+    border-radius:5px;
+    padding-bottom:1%;
+}
+.connexion>form>*{
+    display:block;
+}
+.connexion>form>input{
+    width: 90%;
+    margin:6px 1% 0px 3%;
+    padding:5px;
+    border-radius:5px;
+    border:1px solid rgb(151, 151, 151);
+}
+.connexion>form>label{
+    display: inline-block;
+    color:black;
+    margin-top:20px;
+    margin-left:3%;
+}
+.connexion>form>input[type="submit"]{
+    width: 95%;
+    padding:7px;
+    margin:4vh 2%;
+    border:1px solid black;
+    border-radius: 5px;
+    background-color: var(--base-yellow);
+    font-weight:bold;
+    cursor:pointer;
+}
+.connexion>h2{
+    text-align: center;
+    padding-top:1vh;
+}
+
+/***************FOOTER.PHP***************/
+.subscribe{
+    margin:2vh auto 2vh auto;
+    padding-bottom:10px;
+    width:22%;
+    border-radius:10px;
+    background:rgb(255, 255, 255);
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+}
+.subscribe>h2{
+    text-align:center;
+}
+.subscribe label{
+    display: inline-block;
+    color:black;
+    margin-top:2vh;
+    margin-left:1vw;
+}
+.inputSubscribe{
+    width: 90%;
+    margin:6px 1% 0px 3%;
+    padding:5px;
+    border-radius:5px;
+    border:1px solid rgb(151, 151, 151);
+}
+.formSubscribe h2{
+    color:black;
+}
+
+.btnSubscribe{
+    width: 95%;
+    padding:1vh;
+    margin:2vh 2%;
+    border:1px solid black;
+    border-radius: 5px;
+    background-color: var(--base-yellow);
+    font-weight:bold;
+    cursor:pointer;
+}
+
 /***************FOOTER.PHP***************/
 footer{
     background:var(--base-txt-color);
@@ -198,7 +368,6 @@ footer{
     justify-content: center;
     align-items:flex-start;
     padding:1vh 0;
-    margin-top:2vh;
 }
 
 footer>div{
@@ -232,18 +401,6 @@ footer * {
 
 
 
-
-
-.garage>img{
-    display:none;
-}
-
-
-
-
-
-
-
 /*****************************************************/
 /*********************RESPONSIVE*********************/
 /***************************************************/
@@ -264,9 +421,22 @@ footer * {
         width:50%;
     }
     /*index.php*/
-    .sh-txt{
-        width:30%;
+    /*garage*/
+    .sh-txt,.c-txt{
+        width:40%;
     }
+    /*concession*/
+    .c-txt>a{
+        width:42%;
+    }
+    /*contact*/
+    .open-time{
+        width:40%;
+    }
+    .contact>iframe{
+        width:40%;
+    }
+
     /*footer*/
     footer>div{
         width: 20%;
@@ -290,10 +460,13 @@ footer * {
         font-size:13px;
     }
     /*index.php*/
-    .sh-txt>h2{
+    .sh-txt, .c-txt{
+        width: 45%;
+    }
+    .sh-txt>h2, .c-txt>h2, .open-time>h2{
         font-size:20px;
     }
-    .sh-txt>p{
+    .sh-txt>p,.c-txt>p, .week>div>p, .address>div>p {
         font-size: 13px;
     }
     /*footer*/
@@ -314,8 +487,12 @@ footer * {
         width:43%;
     }
     /*index.php*/
-    .sh-txt{
-        margin:5vh 0;
+    .sh-txt, .c-txt{
+        padding: 3vh 2vw;
+        line-height: 120%;
+    }
+    .sh-txt>a, .c-txt>a{
+        width:53%;
     }
     /*footer*/
     footer>div{
@@ -330,12 +507,7 @@ footer * {
         padding: 1vh 1vw;
     }
     /*index.php*/
-    
-
-
-
-
-    .garage{
+    .garage, .concession{
         flex-direction:column;
         justify-content:center;
         /* background:no-repeat url(../pictures/garageBVB2.jpg); */
@@ -344,7 +516,7 @@ footer * {
         background-position:50% 100%;
         box-shadow:none;
     }
-    .sh-txt{
+    .sh-txt, .c-txt{
         width:90%;
         margin:0 auto;
         padding:1.5vh 1vw;
@@ -355,19 +527,58 @@ footer * {
         border-bottom-left-radius: 5px;
         border:2px solid black;
         border-top:none;
+        clip-path: none;
     }
-    .garage>img{
+    .sh-txt>h2, .sh-txt>p, .c-txt>h2, .c-txt>p{
+        margin:1.5vh 1vw;
+    }
+    .sh-txt>a, .c-txt>a{
+        margin:0 auto;
+    }
+    .garage>img, .concession>img{
         display:block;
         width:92%;
-        margin:2vh auto 0 auto;
-        border-top-right-radius: 5px;
-        border-top-left-radius: 5px;
+        margin:0 auto;
         border:2px solid black;
         border-bottom:none;
-
+    }
+    .garage>img{
+        border-top:none;
+    }
+    .concession>img{
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
     }
 
 
+
+
+    .contact{
+        flex-direction:column-reverse;
+        width:92%;
+        border:2px solid black;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        border-bottom:none;
+    }
+    .contact>iframe{
+        width:100%;
+        margin:0;
+        border:none;
+        border-radius:none;
+    }
+    .open-time{
+        clip-path:none;
+        margin:0;
+        padding:0;
+        width:100%;
+        background:var(--base-yellow);
+    }
+    .open-time{
+    }
+    .week>div{
+        margin:0;
+    }
 
 
 
@@ -377,69 +588,3 @@ footer * {
 
 @media screen and (max-width: 600px) {
 }
-
-.garage-resp{
-    display:none;
-}
-/*.garage{
-    background:no-repeat 50% 60% url(../pictures/garageBVB.jpg);
-    background-size:100%;
-    box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.322);display:flex;
-    justify-content:right;
-    align-items: center;
-}
-
-.sh-txt{
-    width:25%;
-    
-    margin:10vh 0;
-    background: rgba(255, 217, 0, 0.9);
-    border-top-left-radius:10px;
-    border-bottom-left-radius:10px;
-    border:2px solid black;
-    border-right:none;
-    cursor: default;
-}
-
-.garage>div>h2{
-    margin-top:0;
-    text-decoration:underline;
-}
-.garage>div>p{
-    font-weight:bold;
-    color:var(--base-txt-color);
-}*/
-
-
-
-
-
-
-
-/*method 1
-.garage{
-    display:none;
-}
-
-.garage-resp{
-    font-size:11px;
-    width:95%;
-    margin:2vh auto 0 auto;
-    display:flex;
-    background:white;
-    border-radius: 5px;
-}
-.garage-resp>div:first-child{
-    width:45%;
-    margin: 0 5%;
-}
-.garage-resp>div:last-child{
-    width: 45%;
-    margin: 0 5%;
-}
-.garage-resp>div:last-child>img{
-    width: 100%;
-    border-radius: 5px;
-    margin:0.5vh 0;
-    border:2px solid var(--base-yellow);
-}*/
