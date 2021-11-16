@@ -8,6 +8,9 @@
                 </a>
             </div>
             <div class="header-Rbutton">
+                <?php
+                    var_dump($_SESSION['name']);
+                ?>
                 <a href="inscription.php">S'inscrire</a>
                 <a href="connexion.php">Se connecter</a>
             </div>
