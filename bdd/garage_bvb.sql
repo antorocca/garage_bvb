@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 17, 2021 at 01:15 PM
+-- Generation Time: Nov 17, 2021 at 02:37 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.19
 
@@ -21,6 +21,22 @@ SET time_zone = "+00:00";
 --
 -- Database: `garage_bvb`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `car`
+--
+
+CREATE TABLE `car` (
+  `id` int(11) NOT NULL,
+  `brand` varchar(255) NOT NULL,
+  `model` varchar(255) NOT NULL,
+  `year` int(11) NOT NULL,
+  `price` float NOT NULL,
+  `description` text NOT NULL,
+  `mileage` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -55,6 +71,12 @@ INSERT INTO `user` (`id`, `name`, `firstname`, `email`, `password`, `phone`, `ad
 --
 
 --
+-- Indexes for table `car`
+--
+ALTER TABLE `car`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -63,6 +85,12 @@ ALTER TABLE `user`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `car`
+--
+ALTER TABLE `car`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `user`
