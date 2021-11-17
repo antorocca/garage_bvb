@@ -1,3 +1,11 @@
+<?php
+$bdd = Database::connect();
+if(!empty($_SESSION)){
+$stmt = $bdd->prepare('SELECT * FROM user WHERE id=?');
+$stmt->execute([$_SESSION['id']]);
+$user = $stmt->fetch();
+}
+?>
 <body>
     <header>
         <div>
@@ -9,10 +17,18 @@
             </div>
             <div class="header-Rbutton">
                 <?php
-                    var_dump($_SESSION['name']);
+                    if(!empty($_SESSION)){
+                        echo'<a href="my-account.php">
+                                <p>' . $user['name'] . ' ' . $user['firstname'] . '</p>
+                                <p>Mon compte</p>
+                            </a>';
+                    }else{
+                        echo 
+                        '<a href="inscription.php">S\'inscrire</a>
+                        <a href="connexion.php">Se connecter</a>';
+                    }
                 ?>
-                <a href="inscription.php">S'inscrire</a>
-                <a href="connexion.php">Se connecter</a>
+                
             </div>
         </div>
         <nav>
@@ -21,3 +37,6 @@
             <a href="">La concession auto</a>
         </nav>
     </header>
+
+
+    

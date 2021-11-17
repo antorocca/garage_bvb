@@ -46,9 +46,7 @@
                             $newUser = $stmt->fetch();
                             /*create session*/
                             if($newUser['email'] == $email){
-                                $_SESSION['email'] = $newUser['email'];
-                                $_SESSION['role'] = $newUser['role'];
-                                $_SESSION['name'] = $newUser['name'];
+
                                 $_SESSION['id'] = $newUser['id'];
 
                             header('Location: index.php');
@@ -75,11 +73,11 @@
         }
     }
 
-    /*public static function submitConnexion(){
+    public static function connexion(){
 
         $bdd = Database::connect();
 
-        if(isset($_POST['submitConnexion'])){
+        if(isset($_POST['connexion'])){
             $email = $_POST['email'];
             $mdp = $_POST['mdp'];
             
@@ -92,40 +90,25 @@
         
                     $result = $select->fetch();
 
-                
-                
                     if($result !== false){
         
                         $mdpBdd = $result[4];
                         $role = $result['role'];
-                        
-                        if($role !== 'ban'){
 
-                            if( password_verify($mdp, $mdpBdd)){
-            
-                                $_SESSION['email'] = $result[1];//1 = email dans bdd
-                                $_SESSION['role'] = $result[7];
-                                $_SESSION['name'] = $result[2];
-                                $_SESSION['id'] = $result[0];
+                        if( password_verify($mdp, $mdpBdd)){
 
-                                if($role == 'admin') {
-                                    header('Location: admin.php');
-                                } 
-                                else{
-            
-                                    header('Location: index.php');
-                                }
-                            }
-                            else{
-                                static::$erreurCo = 'Le mot de passe est invalide';
-                            }
+                            $_SESSION['id'] = $result['id'];
+
+                            
+                                header('Location: index.php');
+                            
                         }
                         else{
-                            static::$ban = 'Vous avez été banni.';
-                        }
+                            static::$erreurCo = 'Mot de passe incorrect';
+                        }   
                     }
                     else{
-                        static::$erreurCo = '*L\'email n\'est pas reconnu';
+                        static::$erreurCo = '*L\'email n\'a pas été reconnu';
                     }                    
                 }
                 else{
@@ -136,6 +119,6 @@
                 static::$erreurCo = '*Veuillez remplir les champs';
             }
         }
-    }*/
+    }
 }
 ?>

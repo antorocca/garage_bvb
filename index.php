@@ -1,4 +1,9 @@
 <?php 
+session_start();
+require_once 'function/connexion.php';
+require_once 'function/database.php';
+Submit::submitRegister();
+
 include('include/head.php');
 include('include/header.php');
 ?> 
@@ -12,7 +17,6 @@ include('include/header.php');
     </div>
     
 </section>
-
 
 <section class="partner">
     <img src="assets/pictures/garage_premier.png" alt="logo_garage_premier">
