@@ -99,9 +99,12 @@
 
                             $_SESSION['id'] = $result['id'];
 
-                            
+                            if($role == 'admin') {
+                                header('Location: admin.php');
+                            } 
+                            else{
                                 header('Location: index.php');
-                            
+                            }
                         }
                         else{
                             static::$erreurCo = 'Mot de passe incorrect';

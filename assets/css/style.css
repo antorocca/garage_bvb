@@ -9,7 +9,9 @@ body{
     background: var(--base-grey);
 }
 
-
+.cen-tit{
+    text-align:center;
+}
 /***************HEADER.PHP***************/
 header{
     background:var(--base-yellow);
@@ -80,6 +82,17 @@ header>div>h1{
     color:var(--base-txt-color);
     border:1px solid black;
 }
+/*when user is connected*/
+.connected>p{
+    margin:0;
+}
+.connected>p:last-child{
+    margin-top:1vh;
+}
+.connected>hr{
+    color:var(--base-yellow);
+}
+
 /*navbar*/
 header>nav{
     display:flex;
@@ -103,7 +116,20 @@ header>nav>a:hover{
     border:1px solid var(--base-yellow);
     margin: 1px 0.5vw;
 }
-
+/*admin button*/
+.admin-btn{
+    display:block;
+    width:50%;
+    margin:1vh auto;
+    padding:1vh 1vw;
+    background:var(--base-yellow);
+    text-decoration: none;
+    color:black;
+    text-align: center;
+    border:2px solid black;
+    font-weight:bold;
+    border-radius:5px;
+}
 /***************INDEX.PHP***************/
 /*first section (image)*/
 .garage{
@@ -220,6 +246,7 @@ header>nav>a:hover{
 .contact{
     margin:0 auto;
     background:no-repeat 50% 60% url(../pictures/garage2.jpg);
+    box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.322);
     display:flex;
     justify-content: space-between;
 }
@@ -510,7 +537,6 @@ footer * {
     .garage, .concession{
         flex-direction:column;
         justify-content:center;
-        /* background:no-repeat url(../pictures/garageBVB2.jpg); */
         background:none;
         background-size:cover;
         background-position:50% 100%;
@@ -550,9 +576,7 @@ footer * {
         border-top-left-radius: 5px;
     }
 
-
-
-
+/*contact section*/
     .contact{
         flex-direction:column-reverse;
         width:92%;
@@ -574,17 +598,59 @@ footer * {
         width:100%;
         background:var(--base-yellow);
     }
-    .open-time{
-    }
     .week>div{
         margin:0;
     }
 
-
-
-
-
 }
 
 @media screen and (max-width: 600px) {
+}
+
+
+.user-admin{
+    width: 95%;
+    margin:1vh auto;
+    border:1px solid black;
+    border-bottom: none;
+    border-radius: 5px;
+    background:white;
+}
+.user-admin>a{
+    display:block;
+    padding:1vh;
+    text-align: center;
+    text-decoration: none;
+    color:white;
+    background:#147a00;
+}
+.user-tab{
+    border-bottom: 1px solid black;
+}
+.user-tab>p:first-child{
+    width:5%;
+}
+.user-tab>p{
+    display:inline-block;
+    width:25%;
+    text-align: center;
+}
+.user-tab>a{
+    display:inline-block;
+    width:21%;
+    text-align: center;
+    text-decoration: none;
+    color:black;
+    margin:0 0.5%;
+    padding:1vh 0;
+}
+.user-tab>a:nth-child(4){
+    border-radius: 5px;
+    background:#002fc9;
+    color:white;
+}
+.user-tab>a:nth-child(5){
+    border-radius: 5px;
+    background:#c90000;
+    color:white;
 }

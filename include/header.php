@@ -1,4 +1,5 @@
 <?php
+$user['role']= '';
 $bdd = Database::connect();
 if(!empty($_SESSION)){
 $stmt = $bdd->prepare('SELECT * FROM user WHERE id=?');
@@ -18,8 +19,9 @@ $user = $stmt->fetch();
             <div class="header-Rbutton">
                 <?php
                     if(!empty($_SESSION)){
-                        echo'<a href="my-account.php">
+                        echo'<a class="connected" href="my-account.php">
                                 <p>' . $user['name'] . ' ' . $user['firstname'] . '</p>
+                                <hr>
                                 <p>Mon compte</p>
                             </a>';
                     }else{
@@ -37,6 +39,11 @@ $user = $stmt->fetch();
             <a href="">La concession auto</a>
         </nav>
     </header>
+    <?php
+        if($user['role']=='admin'){
+            echo '<a class="admin-btn" href="admin.php">Page administrateur</a>';
+        }
+    ?>
 
 
     
