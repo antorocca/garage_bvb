@@ -14,7 +14,7 @@ include('include/header.php');
 ?> 
 <h2 class="cen-tit">Liste des utilisateurs</h2>
 <section class='user-admin'>
-    <a href="">Créer un utilisateur</a>
+    <a href="createU.php">Créer un utilisateur</a>
     <?php
         foreach($allUsers as $user){
             echo'
@@ -31,6 +31,6 @@ include('include/header.php');
 
 <h2 class="cen-tit">Liste des véhicules</h2>
 <section>
-    <a href="crud/createC.php">Ajouter un véhicule</a>
+    <a href="createC.php">Ajouter un véhicule</a>
  <!-- ici foreach des vehicule -->
 </section>

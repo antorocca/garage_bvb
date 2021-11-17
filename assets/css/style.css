@@ -388,6 +388,70 @@ header>nav>a:hover{
     cursor:pointer;
 }
 
+/***************ADMIN.PHP***************/
+/*user table*/
+.user-admin{
+    width: 95%;
+    margin:1vh auto;
+    border:1px solid black;
+    border-bottom: none;
+    border-radius: 5px;
+    background:white;
+}
+.user-admin>a{
+    display:block;
+    padding:1vh;
+    text-align: center;
+    text-decoration: none;
+    color:white;
+    background:#147a00;
+}
+.user-tab{
+    border-bottom: 1px solid black;
+}
+.user-tab>p:first-child{
+    width:5%;
+}
+.user-tab>p{
+    display:inline-block;
+    width:25%;
+    text-align: center;
+}
+.user-tab>a{
+    display:inline-block;
+    width:21%;
+    text-align: center;
+    text-decoration: none;
+    color:black;
+    margin:0 0.5%;
+    padding:1vh 0;
+}
+.user-tab>a:nth-child(4){
+    border-radius: 5px;
+    background:#002fc9;
+    color:white;
+}
+.user-tab>a:nth-child(5){
+    border-radius: 5px;
+    background:#c90000;
+    color:white;
+}
+/**********createU.PHP**********/
+.cre-us-form{/*css more detail of form in inscription.php css*/
+    width: 25%;
+    margin:2vh auto;
+    background:white;
+    border-radius:5px;
+}
+.cre-us-form>h2{
+    padding-top:2vh
+}
+.cre-us-form>label{
+    margin-left:1vw;
+}
+.cre-us-form>input{
+    margin-bottom:1vh;
+}
 /***************FOOTER.PHP***************/
 footer{
     background:var(--base-txt-color);
@@ -608,49 +672,9 @@ footer * {
 }
 
 
-.user-admin{
-    width: 95%;
-    margin:1vh auto;
-    border:1px solid black;
-    border-bottom: none;
-    border-radius: 5px;
-    background:white;
-}
-.user-admin>a{
-    display:block;
-    padding:1vh;
-    text-align: center;
-    text-decoration: none;
-    color:white;
-    background:#147a00;
-}
-.user-tab{
-    border-bottom: 1px solid black;
-}
-.user-tab>p:first-child{
-    width:5%;
-}
-.user-tab>p{
-    display:inline-block;
-    width:25%;
-    text-align: center;
-}
-.user-tab>a{
-    display:inline-block;
-    width:21%;
-    text-align: center;
-    text-decoration: none;
-    color:black;
-    margin:0 0.5%;
-    padding:1vh 0;
-}
-.user-tab>a:nth-child(4){
-    border-radius: 5px;
-    background:#002fc9;
-    color:white;
-}
-.user-tab>a:nth-child(5){
-    border-radius: 5px;
-    background:#c90000;
-    color:white;
-}
+
+
+
+
+
+
