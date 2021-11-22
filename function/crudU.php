@@ -74,6 +74,68 @@ class CrudU{
             header("Location: admin.php");
         }
     }
+
+    public static function updateUser(){ 
+
+        $bdd = Database::connect();
+        $id = $_GET['id'];
+
+        
+        $user = $bdd->prepare('SELECT * FROM user WHERE id = ?');
+        $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $user->execute([$id]);
+
+        $userDetails = $user->fetch();
+
+        if(isset($_POST['sbmUpd'])){
+            $updEmail = htmlspecialchars($_POST['updEmail']);
+            $updRole = htmlspecialchars($_POST['updRole']);
+            $updName = htmlspecialchars($_POST['updName']);
+            $updFirstName = htmlspecialchars($_POST['updFirstname']);
+            $updAddress = htmlspecialchars($_POST['updAddress']);
+            $updPostal = htmlspecialchars($_POST['updPostal']);
+            $updPhone = htmlspecialchars($_POST['updPhone']);
+            $updCity = htmlspecialchars($_POST['updCity']);
+
+
+                if(empty($updEmail)){
+
+                    $updEmail = $userDetails['email'];
+                }
+                if(empty($updName)){
+                        
+                    $updName = $userDetails['name'];
+                }
+                if(empty($updFirstName)){
+                            
+                    $updFirstName = $userDetails['firstname'];
+                }               
+                if(empty($updPhone)){
+                                        
+                    $updPhone = $userDetails['phone'];
+                }
+                if(empty($updAddress)){
+                                
+                    $updAddress = $userDetails['address'];
+                }
+                if(empty($updCity)){
+                                    
+                    $updCity = $userDetails['city'];
+                }
+                if(empty($updPostal)){
+                                        
+                    $updPostal = $userDetails['postal'];
+                }
+                if(empty($updRole)){
+                                        
+                    $updRole = $userDetails['role'];
+                }
+            $update = $bdd->prepare('UPDATE user SET email = ?, name = ?, firstname = ?, phone = ?, address = ?, city = ?, postal= ?, role = ? WHERE id= ?');
+            $update->execute([$updEmail, $updName, $updFirstName, $updPhone, $updAddress, $updCity, $updPostal, $updRole, $id]);
+            header('Location: admin.php');
+
+        }
+    }
 }
 
 ?>

@@ -27,7 +27,7 @@ include('include/header.php');
                 <p>'. $user['id'] . '</p>
                 <p>'. $user['name'] . '</p>
                 <p>'. $user['email'] . '</p>
-                <a href="#">Voir / Modifier</a>
+                <a href="updateU.php?id=' . $user['id'] . '">Voir / Modifier</a>
                 <a href="deleteU.php?id=' . $user['id'] . '">Supprimer</a>
             </div>';
         }

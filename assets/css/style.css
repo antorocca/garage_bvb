@@ -433,7 +433,7 @@ header>nav>a:hover{
 }
 .user-tab>a:nth-child(5){
     border-radius: 5px;
-    background:#c90000;
+    background:#da0000;
     color:white;
 }
 /**********createU.PHP**********/
@@ -461,7 +461,77 @@ header>nav>a:hover{
     border:1px solid rgb(151, 151, 151);
 }
 /**********deleteU.PHP**********/
+.delete{
+    width:60%;
+    margin:2vh auto;
+    background:white;
+    text-align:center;
+    border-radius: 5px;
+    padding-bottom:2vh;
+}
+.delete>p{
+    padding:2vh 0 1vh 0;
+}
+.delete>form>input{
+    margin:1vh 0 2vh 0;
+    padding:1.5vh 0;
+    width:15%;
+    background:#da0000;
+    color:white;
+    border:none;
+    border-radius: 5px;
+    cursor:pointer;
+}
+.delete>a{
+    margin-bottom:2vh
+}
+/**********updateU.PHP**********/
+.upd-tab{
+    width:60%;
+    margin:2vh auto;
+    padding-bottom:2vh;
+    background:white;
+    border-radius:5px;
+}
+.upd-tab>a{
+    display:block;
+    text-align: center;
+    margin: 1vh 0;
+}
+.seeU, .updU{
+    width: 34%;
+    margin-left:15%;
+    display:inline-block;
+}
+.seeU>p:nth-child(even){
+    margin:0 0 0 0;
+}
+.seeU>p:nth-child(odd){
+    margin:0.5vh 0 3vh 0;
+}
+.updU>form>label{
+    display:block;
+    width: 51%;
+    margin:0 1%;
+}
+.updU>form>input{
+    width: 60%;
+    margin:1vh 1%;
+    padding:0.5vh 0.5vw;
+}
+.updU>form>select{
+    width: 66%;
+    margin:1vh 1%;
+    padding:0.5vh 0.5vw;
+}
+.updU>form>input:last-child{
+    background:#002fc9;;
+    color:white;
+    border-radius:5px;
+    border:none;
+    padding:1.5vh 0;
 
+}
 /***************FOOTER.PHP***************/
 footer{
     background:var(--base-txt-color);
