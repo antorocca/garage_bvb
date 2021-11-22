@@ -2,6 +2,7 @@
 session_start();
 require_once 'function/crudU.php';
 require_once 'function/database.php';
+    Submit::submitRegister();
 
 CrudU::createUser();
 
@@ -39,6 +40,11 @@ include('include/header.php');
         <input class="inputSubscribe" type="password" name="mdp">
     <label>Confirmation du mot de passe:</label>
         <input class="inputSubscribe" type="password" name="mdp2">
+    <label>Rôle:</label>
+        <select name="role">
+            <option value="admin">Administrateur</option>
+            <option value="user">Utilisateur</option>
+        </select>
     <input class="btnSubscribe" type="submit" name="submit" value="Créer l'utilisateur">
 </form>
 

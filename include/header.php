@@ -1,10 +1,12 @@
 <?php
 $user['role']= '';
+
 $bdd = Database::connect();
+
 if(!empty($_SESSION)){
-$stmt = $bdd->prepare('SELECT * FROM user WHERE id=?');
-$stmt->execute([$_SESSION['id']]);
-$user = $stmt->fetch();
+    $stmt = $bdd->prepare('SELECT * FROM user WHERE id=?');
+    $stmt->execute([$_SESSION['id']]);
+    $user = $stmt->fetch();
 }
 ?>
 <body>
