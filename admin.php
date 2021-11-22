@@ -1,6 +1,11 @@
 <?php 
 session_start();
 require_once 'function/database.php';
+
+if($_SESSION['role']!=="admin") {
+    header('Location: logout.php');
+}
+
 $bdd = Database::connect();
 
 $stmtU = $bdd ->prepare('SELECT * FROM user');
@@ -23,7 +28,7 @@ include('include/header.php');
                 <p>'. $user['name'] . '</p>
                 <p>'. $user['email'] . '</p>
                 <a href="#">Voir / Modifier</a>
-                <a href="#">Supprimer</a>
+                <a href="deleteU.php?id=' . $user['id'] . '">Supprimer</a>
             </div>';
         }
     ?>
@@ -34,3 +39,7 @@ include('include/header.php');
     <a href="createC.php">Ajouter un véhicule</a>
  <!-- ici foreach des vehicule -->
 </section>
+
+<?php
+include('include/footer.php');
+?>

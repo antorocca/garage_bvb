@@ -98,6 +98,7 @@
                         if( password_verify($mdp, $mdpBdd)){
 
                             $_SESSION['id'] = $result['id'];
+                            $_SESSION['role'] = $result['role'];
 
                             if($role == 'admin') {
                                 header('Location: admin.php');

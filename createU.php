@@ -1,7 +1,9 @@
 <?php 
 session_start();
-require_once 'function/connexion.php';
+require_once 'function/crudU.php';
 require_once 'function/database.php';
+
+CrudU::createUser();
 
 include('include/head.php');
 include('include/header.php');
@@ -9,11 +11,8 @@ include('include/header.php');
 <form class="cre-us-form" action="" method="post">
     <h2 class="cen-tit">Créer un utilisateur</h2>
     <?php
-        if(Submit::$erreur){
-            echo '<h4 style="color:red;margin:5px 0px;">' . Submit::$erreur . '</h4>';
-        }
-        elseif(Submit::$success) {
-            echo '<h4 style="color:rgb(28, 100, 255);margin:5px 0px;">' . Submit::$success . '</h4>';
+        if(isset($_POST['submit'])){
+            echo '<h4 style="color:red;margin:1vh 1vw;">' . CrudU::$erreur . '</h4>';
         }
     ?>
     <label>E-mail:</label>
@@ -30,6 +29,12 @@ include('include/header.php');
         <input class="inputSubscribe" type="text" name="city">
     <label>Code postal:</label>
         <input class="inputSubscribe" type="text" name="postal">
+    <label>Rôle:</label>
+    <select name="role">
+         <option value=""></option>
+         <option value="admin">Administrateur</option>
+         <option value="user">Utilisateur</option>
+    </select>
     <label>Mot de passe:</label>
         <input class="inputSubscribe" type="password" name="mdp">
     <label>Confirmation du mot de passe:</label>

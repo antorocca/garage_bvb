@@ -346,7 +346,7 @@ header>nav>a:hover{
     padding-top:1vh;
 }
 
-/***************FOOTER.PHP***************/
+/***************INSCRIPTION.PHP***************/
 .subscribe{
     margin:2vh auto 2vh auto;
     padding-bottom:10px;
@@ -452,6 +452,16 @@ header>nav>a:hover{
 .cre-us-form>input{
     margin-bottom:1vh;
 }
+.cre-us-form>select{
+    display:block;
+    width: 92%;
+    margin:6px 1% 1vh 3%;
+    padding:5px;
+    border-radius:5px;
+    border:1px solid rgb(151, 151, 151);
+}
+/**********deleteU.PHP**********/
+
 /***************FOOTER.PHP***************/
 footer{
     background:var(--base-txt-color);
