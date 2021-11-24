@@ -158,6 +158,7 @@ header>nav>a:hover{
 }
 .garage:hover>.sh-txt{
     background: rgba(255, 217, 0, 0.85);
+    clip-path: polygon(22% 0, 100% 0, 100% 100%, 0% 100%);
 }
 
 .sh-txt>h2, .sh-txt>p{
@@ -216,9 +217,6 @@ header>nav>a:hover{
     justify-content:left;
     align-items: center;
 }
-.concession:hover>.c-txt{
-    background: rgba(255, 217, 0, 0.85);
-}
 .c-txt{
     line-height:150%;
     width:35%;
@@ -228,6 +226,10 @@ header>nav>a:hover{
     cursor: default;
     clip-path: polygon(0 0, 71% 0, 100% 100%, 0 100%);
     transition:0.2s;
+}
+.concession:hover>.c-txt{
+    background: rgba(255, 217, 0, 0.85);
+    clip-path: polygon(0 0, 80% 0, 100% 100%, 0% 100%);
 }
 .c-txt>p, .c-txt>p{
     margin-right:30%;
@@ -252,6 +254,8 @@ header>nav>a:hover{
 }
 .contact:hover>.open-time{
     background: rgba(255, 217, 0, 0.85);
+    clip-path: polygon(22% 0, 100% 0, 100% 100%, 0% 100%);
+
 }
 .contact>iframe{
     margin:2vh 0 2vh 2vw;
@@ -388,6 +392,113 @@ header>nav>a:hover{
     cursor:pointer;
 }
 
+/***************CATALOG.PHP***************/
+/***********1st section mandating***********/
+.mandate{
+    background:no-repeat center/cover url(../pictures/peugeot208.jpg);
+    box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.322);
+}
+.mandate>div{
+    width:40%;
+    margin:0vh auto;
+    padding:12vh 0;
+    text-align:center;
+    background: rgba(255, 217, 0, 0.65);
+    clip-path: polygon(20% 0%, 100% 0, 80% 100%, 0% 100%);
+    transition:0.2s;
+}
+.mandate:hover>div{
+    background: rgba(255, 217, 0, 0.85);
+    clip-path: polygon(15% 0%, 100% 0, 85% 100%, 0% 100%);
+}
+.mandate>div>h2{
+    text-decoration:underline;
+}
+.mandate>div>p{
+    margin-bottom:4vh;
+}
+.mandate>div>a{
+    background:black;
+    color: var(--base-yellow);
+    text-decoration:none;
+    font-weight:bold;
+    padding:1vh 1vw;
+    border-radius:5px;
+    border:1px solid black;
+    transition:0.2s;
+ }
+.mandate>div>a:hover{
+     background:var(--base-yellow);
+     color:black;
+ }
+/*********catalog********/
+.cat-tit{
+     background-color:black;
+     color:var(--base-yellow);
+     margin: 0;
+     padding:2vh 0;
+     cursor:default;
+ }
+.catalog{
+    background:rgb(71, 71, 71);     
+ }
+ .car-ann{
+    display:flex;
+    align-items:center;
+    width:90%;
+    overflow:hidden;
+    margin:0 auto; 
+    background:var(--base-yellow);
+    height:80vh;
+    border: 2px solid var(--base-yellow);
+    transition:0.2s;
+ }
+
+.car-ann>div>p, .car-ann>div>h3, .car-ann>div>h4{
+    color:black;
+    margin-left:3vw;
+    margin-right:6vw;
+    /* justify-content:center;
+    padding:2vh 0; */
+}
+
+ .car-ann>div:first-child{
+    /* clip-path: polygon(15% 0, 100% 0%, 85% 100%, 0% 100%); */
+    width:40%;
+    transition:0.3s;
+}
+
+.car-ann>div>img{
+    height: 100%;
+    box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.322);
+}
+.car-ann>div:last-child{
+    background:white;
+    height:min-content;
+    margin-left:3vw;
+    width:50%;
+    clip-path: polygon(0 0, 100% 0%, 82% 100%, 0 100%);
+}
+.car-ann>div:last-child>p:last-child{
+    column-width: 10em;
+    column-rule: 1px solid rgb(75, 70, 74);
+}
+/*.car-ann:hover>div:first-child{
+   clip-path: polygon(8% 0, 100% 0%, 92% 100%, 0% 100%);
+}
+.car-ann>div>img{
+     width:100%;
+ }
+.car-ann>div>h3, .car-ann>div>h4, .car-ann>div>p{
+     color:black //var(--base-yellow);
+     margin:1.3vh 0 1.3vh 10vw;
+ }
+.car-ann>div:last-child{
+    background:white;
+    width:100%;
+    clip-path: polygon(15% 0, 100% 0%, 85% 100%, 0% 100%);
+    z-index:1000;
+ } */
 /***************ADMIN.PHP***************/
 /*user table*/
 .user-admin{
@@ -414,24 +525,24 @@ header>nav>a:hover{
 }
 .user-tab>p{
     display:inline-block;
-    width:25%;
+    width:20%;
     text-align: center;
 }
 .user-tab>a{
     display:inline-block;
-    width:21%;
+    width:16%;
     text-align: center;
     text-decoration: none;
     color:black;
     margin:0 0.5%;
     padding:1vh 0;
 }
-.user-tab>a:nth-child(4){
+.user-tab>a:nth-child(5){
     border-radius: 5px;
     background:#002fc9;
     color:white;
 }
-.user-tab>a:nth-child(5){
+.user-tab>a:nth-child(6){
     border-radius: 5px;
     background:#da0000;
     color:white;
@@ -504,7 +615,7 @@ header>nav>a:hover{
     display:inline-block;
 }
 .seeU>p:nth-child(even){
-    margin:0 0 0 0;
+    margin:0;
 }
 .seeU>p:nth-child(odd){
     margin:0.5vh 0 3vh 0;
@@ -750,11 +861,3 @@ footer * {
 
 @media screen and (max-width: 600px) {
 }
-
-
-
-
-
-
-
-

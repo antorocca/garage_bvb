@@ -8,7 +8,7 @@ if($_SESSION['role']!=="admin") {
 
 $bdd = Database::connect();
 
-$stmtU = $bdd ->prepare('SELECT * FROM user');
+$stmtU = $bdd ->prepare('SELECT * FROM user ORDER BY `role` ASC');
 $stmtU->execute();
 $allUsers = $stmtU->fetchAll();
 
@@ -27,6 +27,7 @@ include('include/header.php');
                 <p>'. $user['id'] . '</p>
                 <p>'. $user['name'] . '</p>
                 <p>'. $user['email'] . '</p>
+                <p>'. $user['role'] . '</p>
                 <a href="updateU.php?id=' . $user['id'] . '">Voir / Modifier</a>
                 <a href="deleteU.php?id=' . $user['id'] . '">Supprimer</a>
             </div>';

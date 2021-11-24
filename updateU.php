@@ -65,7 +65,7 @@ include('include/header.php');
             <input class="submitUpd" type="submit" name='sbmUpd' value="Sauvegarder les modifications">
         </form>
     </div>
-    <a href="">Accueil Administrateur</a>
+    <a href="admin.php">Accueil Administrateur</a>
 </div>
 
 <?php
