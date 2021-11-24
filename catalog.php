@@ -30,23 +30,24 @@ include('include/header.php');
             <div>
                 <img src="assets/upload/' . $car['picture'] . '" alt="' . $car['model'] . '">
             </div>
-            <div>
-                <h3>' . $car['model'] . '</h3>
+            <div class="logo-ann"><img src="assets/pictures/'. $car['brandLogo'] . '"></div>
+            <div class="txt-ann">
+                <h3>' . $car['model'] . '<i class="far fa-hand-pointer"></i></h3>
                 <h4>' . $car['brand'] . '</h4>
-                <p>Année du modèle: ' . $car['year'] . '</p>
-                <p>Mise en circulation: ' . $car['release-date'] . '</p>
-                <p>Kilométrage: ' . $car['mileage'] . ' km</p>
-                <p>Carburant: ' . $car['fuel'] . '</p>
+                <div>
+                    <p><i class="fas fa-calendar-alt"></i> Année du modèle:<br><span>' . $car['year'] . '</span></p>
+                    <p><i class="far fa-calendar-alt"></i> Mise en circulation:<br><span>' . $car['release-date'] . '</span></p>
+                    <p><i class="fas fa-tachometer-alt"></i> Kilométrage:<br><span>' . $car['mileage'] . ' km</span></p>
+                    <p><i class="fas fa-gas-pump"></i> Carburant:<br><span>' . $car['fuel'] . '</span></p>
+                </div>
                 <p>' . $car['price'] . ' €</p>
                 <p>' . nl2br($car['description']) . '</p>';
                 if(strlen($car['addOption'])>400){
-                    $car['addOption'] = nl2br(substr( $car['addOption'],0,550));
+                    $car['addOption'] = nl2br(substr( $car['addOption'],0,500));
                     echo '<p>' . $car['addOption'] . '...</p>';
-                }
-                else{
-                    echo '';
-                }
-            echo'
+                };
+                echo'
+                <a href="">Détails</a>
             </div>
         </article>
         <br>';/*a enlever*/
@@ -56,13 +57,3 @@ include('include/header.php');
 </section>
 
 <?php include('include/footer.php'); ?>
-
-<h3>' . $car['model'] . '</h3>
-                <h4>' . $car['brand'] . '</h4>
-                <p>Année du modèle: ' . $car['year'] . '</p>
-                <p>Mise en circulation: ' . $car['release-date'] . '</p>
-                <p>Kilométrage: ' . $car['mileage'] . ' km</p>
-                <p>Carburant: ' . $car['fuel'] . '</p>
-                <p>' . $car['price'] . ' €</p>
-                <p>' . nl2br($car['description']) . '</p>
-                <p>' . nl2br($car['addOption']) . '</p>
