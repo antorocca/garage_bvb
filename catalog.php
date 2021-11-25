@@ -30,7 +30,10 @@ include('include/header.php');
             <div>
                 <img src="assets/upload/' . $car['picture'] . '" alt="' . $car['model'] . '">
             </div>
-            <div class="logo-ann"><img src="assets/pictures/'. $car['brandLogo'] . '"></div>
+            <div class="logo-ann">
+                <img src="assets/pictures/'. $car['brandLogo'] . '">
+                <h2>' . $car['price'] . ' €</h2>
+            </div>
             <div class="txt-ann">
                 <h3>' . $car['model'] . '<i class="far fa-hand-pointer"></i></h3>
                 <h4>' . $car['brand'] . '</h4>
@@ -47,10 +50,9 @@ include('include/header.php');
                     echo '<p>' . $car['addOption'] . '...</p>';
                 };
                 echo'
-                <a href="">Détails</a>
+                <a href="car.php">Détails</a>
             </div>
-        </article>
-        <br>';/*a enlever*/
+        </article>';/*a enlever*/
     }
     ?>
     

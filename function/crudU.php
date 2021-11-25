@@ -38,7 +38,7 @@ class CrudU{
                         if($count === 0){
     
                             $mdphash = password_hash($mdp, PASSWORD_DEFAULT);
-                            /*insertion in db*/
+                            
                             $insert = $bdd->prepare('INSERT INTO user(name, firstname, email, password, phone, address, city, postal, role) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)');
                             $insert-> execute([$name, $firstname, $email, $mdphash, $phone, $address, $city, $postal, $role]);
 

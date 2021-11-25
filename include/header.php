@@ -3,11 +3,16 @@ $user['role']= '';
 
 $bdd = Database::connect();
 
+if($_SESSION['name'] = ''){
+    header('Location: logout.php');
+}
+
 if(!empty($_SESSION)){
     $stmt = $bdd->prepare('SELECT * FROM user WHERE id=?');
     $stmt->execute([$_SESSION['id']]);
     $user = $stmt->fetch();
 }
+// var_dump($_SESSION);
 ?>
 <body>
     <header>

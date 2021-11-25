@@ -441,16 +441,20 @@ header>nav>a:hover{
      cursor:default;
  }
 .catalog{
-    background:rgb(71, 71, 71);     
+    /* background:rgb(71, 71, 71); */
+    padding:2vh 0; 
  }
  .car-ann{
     display:flex;
     align-items:center;
     width:90%;
     overflow:hidden;
-    margin:0 auto; 
+    margin:0 auto;
+    margin-bottom:3vh;
     background:var(--base-yellow);
     height:80vh;
+    border-top-right-radius: 70px;
+    border-bottom-right-radius: 70px;  
     border: 2px solid var(--base-yellow);
     transition:0.2s;
  }
@@ -467,11 +471,22 @@ header>nav>a:hover{
     overflow:visible;
     box-shadow:none;
 }
-.logo-ann>img{
+.logo-ann>img, .logo-ann>h2{
+    text-align: center;
     position:relative;
     left:24vw;
-    width:15vw;
-    
+    width:12vw;  
+}
+
+.logo-ann>h2{
+    font-size:200%;
+    font-weight:bolder;
+    background:white;
+    text-shadow: 1px 0px 2px var(--base-yellow);
+    color:#000000;
+    padding: 1vh 0;
+    clip-path: circle(49.8% at 50% 50%);
+    border:2px solid black;
 }
 /*text*/
 .txt-ann{
@@ -479,12 +494,15 @@ header>nav>a:hover{
     height:min-content;
     margin-left:3vw;
     width:50%;
-    clip-path: polygon(44% 0, 100% 0, 100% 100%, 93% 8%);padding-left:1.5vw;
+    /* border:2px solid black; */
+    border-radius: 20px;
+    clip-path: polygon(44% 0, 100% 0, 100% 100%, 93% 8%);
+    padding-left:1.5vw;
     transition:0.4s;
 }
 .txt-ann:hover{
     clip-path: polygon(0 0, 100% 0%, 82% 100%, 0 100%);
-    opacity:1;
+    border-top-right-radius: none;
 }
 .txt-ann>h3{
     font-size:160%;
