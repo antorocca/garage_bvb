@@ -50,7 +50,7 @@ include('include/header.php');
                     echo '<p>' . $car['addOption'] . '...</p>';
                 };
                 echo'
-                <a href="car.php">Détails</a>
+                <a href="car.php?id=' . $car['id'] . '">Détails</a>
             </div>
         </article>';/*a enlever*/
     }

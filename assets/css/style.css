@@ -568,6 +568,15 @@ header>nav>a:hover{
 .txt-ann>div>p>span::first-letter{
     color:red;
 }
+/***************CAR.PHP***************/
+.carDet{
+    /* display:flex; */
+    width: 90%;
+    margin:0 auto;
+}
+.car-slider>img{
+    width: 33%;
+}
 /***************ADMIN.PHP***************/
 /*user table*/
 .user-admin{
