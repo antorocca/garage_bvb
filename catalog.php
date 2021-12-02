@@ -28,7 +28,7 @@ include('include/header.php');
         echo'
         <article class="car-ann">
             <div>
-                <img src="assets/upload/' . $car['picture'] . '" alt="' . $car['model'] . '">
+                <a href="car.php?id=' . $car['id'] . '"><img src="assets/upload/' . $car['picture'] . '" alt="' . $car['model'] . '"></a>
             </div>
             <div class="logo-ann">
                 <img src="assets/pictures/'. $car['brandLogo'] . '">
@@ -46,7 +46,7 @@ include('include/header.php');
                 <p>' . $car['price'] . ' €</p>
                 <p>' . nl2br($car['description']) . '</p>';
                 if(strlen($car['addOption'])>400){
-                    $car['addOption'] = nl2br(substr( $car['addOption'],0,500));
+                    $car['addOption'] = nl2br(substr( $car['addOption'],0,400));
                     echo '<p>' . $car['addOption'] . '...</p>';
                 };
                 echo'

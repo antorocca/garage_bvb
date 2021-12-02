@@ -1,25 +1,33 @@
-$('.car-slider').slick({
-    centerMode: true,
-    centerPadding: '60px',
-    slidesToShow: 3,
+  $('.car-slider').slick({
+    dots: true,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 1,
+    slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 768,
+        breakpoint: 1024,
         settings: {
-          arrows: false,
-          centerMode: true,
-          centerPadding: '40px',
-          slidesToShow: 3
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
         }
       },
       {
         breakpoint: 480,
         settings: {
-          arrows: false,
-          centerMode: true,
-          centerPadding: '40px',
-          slidesToShow: 1
+          slidesToShow: 1,
+          slidesToScroll: 1
         }
       }
+
     ]
   });
