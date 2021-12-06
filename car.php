@@ -14,20 +14,22 @@ include('include/header.php');
 ?> 
 
 <section class="carDet">
-    
-
-
-    <div class="car-slider">
-        <div><img src="assets/upload/<?=$car['picture']?>" alt="<?=$car['mode']?>"></div>
-        <div><img src="assets/upload/tiguan2.jpg" alt="<?=$car['mode']?>"></div>
-        <div><img src="assets/upload/tiguan3.jpg" alt="<?=$car['mode']?>"></div>
-        <div><img src="assets/upload/tiguan4.jpg" alt="<?=$car['mode']?>"></div>
+    <div>
+        <div class="sld-container">
+            <div class="btn-left-sld"><i class="fas fa-chevron-left"></i></div>
+            <div class="car-slider">
+                <img class="img-sld active" src="assets/upload/<?=$car['picture']?>" alt="<?=$car['mode']?>">
+                <img class="img-sld" src="assets/upload/tiguan2.jpg" alt="<?=$car['mode']?>">
+                <img class="img-sld" src="assets/upload/tiguan3.jpg" alt="<?=$car['mode']?>">
+                <img class="img-sld" src="assets/upload/tiguan4.jpg" alt="<?=$car['mode']?>">
+            </div>
+            <div class="btn-right-sld"><i class="fas fa-chevron-right"></i></div>
+        </div>
+        <div class="car-cld">
+            <h3>Prendre rendez-vous pour un essai:</h3>
+            <img src="assets/pictures/Sans titre2.png" alt="">
+        </div>
     </div>
-    <div class="car-cld">
-        <img src="assets/pictures/Sans titre2.png" alt="">
-    </div>
-
-
     
     <article>
         <h2><?=$car['model'] ?></h2>
@@ -45,5 +47,5 @@ include('include/header.php');
         </div>
     </article>
 </section>
-<?php include('include/link.php'); ?>
+<script src="assets/js/app.js"></script>
 <?php include('include/footer.php'); ?>

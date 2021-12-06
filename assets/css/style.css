@@ -7,7 +7,8 @@
 }
 body{
     font-family: 'Lato', sans-serif;
-    background: var(--base-grey);
+    background: url('../pictures/bckgBVB.jpg');
+    background-size: cover;
 }
 
 .cen-tit{
@@ -572,39 +573,78 @@ header>nav>a:hover{
     color:red;
 }
 /***************CAR.PHP***************/
+
 .carDet{
-    display:flex;
     width: 90%;
     margin:0 auto;
     background:var(--base-yellow);
+    display:flex;
 }
-/*image*/
+
+/*slider*/
+.sld-container{
+    width:100%;
+    display:flex;
+    align-items: center;
+}
+
+/*button left right*/
+.btn-right-sld i:hover, .btn-left-sld i:hover{
+    opacity:1;
+}
+.btn-right-sld i, .btn-left-sld i{
+    font-size:180%;
+    background:black;
+    color:var(--base-yellow);
+    cursor: pointer;
+    opacity:0.85;
+    transition:0.2s;
+}
+.btn-right-sld i{
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    margin-right: 1vw;
+    padding:10vh 0.8vw 10vh 0.5vw;
+}
+.btn-left-sld i{
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    margin-left: 1vw;
+    padding:10vh 0.5vw 10vh 0.8vw;
+}
+
+/*image container*/
 .car-slider{
-    grid-area: left;
-    width:50%;
     height:fit-content;
-    margin:3vh 2vw;
+    margin:3vh 0;
+    border:2px solid var(--base-grey);
+    border-radius:10px;
+    overflow:hidden;
 }
-.car-slider>div{
+.car-slider>img{
     width:100%;
     height:auto;
-    border:2px solid var(--base-grey);
-    border-radius:10px;
+    display:none;
 }
-.slick-slide img {
-    width: 100%;
-} 
-/*description*/
-.carDet>article{
-    background:white;
-    margin:3vh 2vw 3vh 1vh;
-    padding:2vh 2vw;
-    border:2px solid var(--base-grey);
-    border-radius:10px;
+.car-slider>img.active{
+    display:block;
+    animation: fade 0.5s;
 }
+
+@keyframes fade{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
 /*calendar*/
 .car-cld{
+    text-align:center;
 }
+
 /*general info*/
 .infoC{
     width:70%;
@@ -619,18 +659,55 @@ header>nav>a:hover{
     color:black;
     font-weight:bold;
 }
-/*slider-btn*/
-.car-slider .slick-prev::before,.car-slider .slick-next::before {
-    font-family: 'slick';
-    font-size: 20px;
-    line-height: 1;
-    color: white;
-    background:rgb(49, 49, 49);
-    border-radius:50%;
+
+/*description*/
+.carDet>article{
+    background:white;
+    margin:3vh 2vw 3vh 1vh;
+    padding:2vh 2vw;
+    border:2px solid var(--base-grey);
+    border-radius:10px;
 }
-.car-slider .slick-next {
-    right: -28px;
-} 
+
+/***************MANDATE.PHP***************/
+.mdt{
+    width:50%;
+    margin:2vh auto;
+    padding:3vh 2vw;
+    background:white;
+    border-radius:10px;
+    border:2px solid var(--base-yellow);
+}
+.mdt>p{
+    text-align: center;
+}
+.mdt>form{
+    width:40%;
+    margin:0 auto;
+}
+.mdt>form>input{
+    margin-bottom:1vh;
+    padding:0.5vh 0;
+}
+.mdt>form>input[type='submit']{
+    width: 50%;
+    margin:0 auto;
+    padding:1vh 0;
+    background:black;
+    color: var(--base-yellow);
+    border:1px solid black;
+    border-radius:5px;
+    transition:0.2s;
+}
+.mdt>form>input[type='submit']:hover{
+    background:var(--base-yellow);
+    color: black;
+}
+.mdt>form>input, .mdt>form>label{
+    display:block;
+    width:100%;
+}
+
 /***************ADMIN.PHP***************/
 /*user table*/
 .user-admin{

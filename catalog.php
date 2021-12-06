@@ -18,7 +18,7 @@ include('include/header.php');
         <h2>Vous cherchez un véhicule?</h2>
         <h3>Nous pouvons trouver la meilleure occasion pour vous !</h3>
         <p>Donnez nous un modèle et des critères,<br> nous iront chercher la meilleure occasion pour vous ! </p>
-        <a href="">Oui aidez-moi!</a>
+        <a href="mandate.php">Oui aidez-moi!</a>
     </div>
 </section>
 <h2 class="cen-tit cat-tit">Nos véhicules disponible à la vente</h2>
