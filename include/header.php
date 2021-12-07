@@ -1,11 +1,5 @@
 <?php
-$user['role']= '';
-
 $bdd = Database::connect();
-
-if($_SESSION['name'] = ''){
-    header('Location: logout.php');
-}
 
 if(!empty($_SESSION)){
     $stmt = $bdd->prepare('SELECT * FROM user WHERE id=?');
@@ -47,7 +41,7 @@ if(!empty($_SESSION)){
         </nav>
     </header>
     <?php
-        if($user['role']=='admin'){
+        if(!empty($_SESSION) && $user['role']=='admin'){
             echo '<a class="admin-btn" href="admin.php">Page administrateur</a>';
         }
     ?>

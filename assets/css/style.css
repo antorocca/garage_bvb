@@ -703,9 +703,12 @@ header>nav>a:hover{
     background:var(--base-yellow);
     color: black;
 }
-.mdt>form>input, .mdt>form>label{
+.mdt>form>input, .mdt>form>label, .mdt>form>textarea{
     display:block;
     width:100%;
+}
+.mdt>form>textarea{
+    margin-bottom:3vh;
 }
 
 /***************ADMIN.PHP***************/

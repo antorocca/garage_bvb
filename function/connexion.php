@@ -21,46 +21,58 @@
             $postal = htmlspecialchars($_POST['postal']);
             $mdp = htmlspecialchars($_POST['mdp']);
             $mdp2 = htmlspecialchars($_POST['mdp2']);
-            
+
+            // $pregMdp = preg_match('^(.{25,999}.{0,7}|[^0-9]*|[^A-Z]*|[^a-z]*|[a-zA-Z0-9]*)$', $mdp);
+            // $lowercase = preg_match('([^a-z]*)', $mdp);
+            // $number = preg_match('([^0-9]*)', $mdp);
+            // $spChar = preg_match('([a-zA-Z0-9]*)', $mdp);
+          
     
-            if(!empty($email) && !empty($mdp) && !empty($mdp2)){
+            if(!empty($email) && !empty($mdp) && !empty($mdp2)){//not empty input
                 
-                if(filter_var($email, FILTER_VALIDATE_EMAIL)){
-    
-                    if($mdp===$mdp2){
-                        
-                        $select = $bdd->prepare("SELECT * FROM user WHERE email=?");
-                        $select->execute([$email]);
-    
-                        $count = $select->rowcount();
-    
-                        if($count === 0){
-    
-                            $mdphash = password_hash($mdp, PASSWORD_DEFAULT);
-                            /*insertion in db*/
-                            $insert = $bdd->prepare('INSERT INTO user(name, firstname, email, password, phone, address, city, postal, role) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)');
-                            $insert-> execute([$name, $firstname, $email, $mdphash, $phone, $address, $city, $postal, 'user']);
-                            /* call the new user in db*/
-                            $stmt = $bdd->prepare('SELECT * FROM user WHERE email=?');
-                            $stmt-> execute([$email]);
-                            $newUser = $stmt->fetch();
-                            /*create session*/
-                            if($newUser['email'] == $email){
+                if(filter_var($email, FILTER_VALIDATE_EMAIL)){//valid email verification
 
-                                $_SESSION['id'] = $newUser['id'];
+                    // if($uppercase || !$spChar || $lowercase || $number || strlen($mdp) < 8 || strlen($mdp) < 20) {
+                    if(preg_match('^(.{25,999}.{0,8}|[^0-9]*|[^A-Z]*|[^a-z]*|[a-zA-Z0-9]*)$', $mdp)) {
 
-                            header('Location: index.php');
+                        if($mdp!==$mdp2){
+                            
+                            $select = $bdd->prepare("SELECT * FROM user WHERE email=?");
+                            $select->execute([$email]);
+        
+                            $count = $select->rowcount();
+        
+                            if($count === 0){
+        
+                                $mdphash = password_hash($mdp, PASSWORD_DEFAULT);
+                                /*insertion in db*/
+                                $insert = $bdd->prepare('INSERT INTO user(name, firstname, email, password, phone, address, city, postal, role) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)');
+                                $insert-> execute([$name, $firstname, $email, $mdphash, $phone, $address, $city, $postal, 'user']);
+                                /* call the new user in db*/
+                                $stmt = $bdd->prepare('SELECT * FROM user WHERE email=?');
+                                $stmt-> execute([$email]);
+                                $newUser = $stmt->fetch();
+                                /*create session*/
+                                if($newUser['email'] == $email){
 
-                            static::$success='Bienvenue sur BVB auto';
+                                    $_SESSION['id'] = $newUser['id'];
+
+                                // header('Location: index.php');
+
+                                static::$success='Bienvenue sur BVB auto';
+                                }
+        
                             }
-    
+                            else{
+                                static::$erreur = '*Vous etes déjà inscrit veuillez vous connecter !';
+                            }
                         }
                         else{
-                            static::$erreur = '*Vous etes déjà inscrit veuillez vous connecter !';
+                            static::$erreur="*Les mots de passes ne sont pas identique !";
                         }
-                    }
+                    }/*****/
                     else{
-                       static::$erreur="*Les mots de passes ne sont pas identique !";
+                        static::$erreur="*Le mot de passe doit contenir 8 caractères dont 1 majuscule et 1 caractere spécial (#=+&...)";
                     }
                 }
                 else{

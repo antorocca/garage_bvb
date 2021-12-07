@@ -29,6 +29,10 @@ include('include/header.php');
                 <input type="text">
             <label for="">Couleur:</label>
                 <input type="text">
+            <label for="">Budget:</label>
+                <input type="text">
+            <label for="">Commentaires:</label>
+                <textarea name="" id="" rows="8"></textarea>
             <input type="submit" value="Valider">
         </form>
 </section>

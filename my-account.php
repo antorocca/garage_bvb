@@ -6,3 +6,7 @@ include('include/head.php');
 include('include/header.php');
 ?> 
 <a href="logout.php">Se déconnecter</a>
+
+<?php 
+include('include/footer.php');
+?> 
