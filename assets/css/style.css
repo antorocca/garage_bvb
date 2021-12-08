@@ -201,6 +201,7 @@ header>nav>a:hover{
     justify-content: space-around;
     align-items: center;
     padding:1vh 0;
+    box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.322);
 }
 .partner>img{
     width:20%;
@@ -504,9 +505,10 @@ header>nav>a:hover{
     padding-left:1.5vw;
     transition:0.4s;
 }
-.txt-ann:hover{
-    clip-path: polygon(100% 0, 85% 100%, 0 100%, 0 100%, 0 100%, 0 100%, 0 100%, 0 100%, 0 0);    border-top-right-radius: none;
-}
+/* .txt-ann:hover{
+    clip-path: polygon(100% 0, 85% 100%, 0 100%, 0 100%, 0 100%, 0 100%, 0 100%, 0 100%, 0 0);
+    border-top-right-radius: none;
+} */
 .txt-ann>h3{
     font-size:160%;
     margin:2vh 2vh 0 0;

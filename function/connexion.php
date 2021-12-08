@@ -20,29 +20,23 @@
             $city = htmlspecialchars($_POST['city']);
             $postal = htmlspecialchars($_POST['postal']);
             $mdp = htmlspecialchars($_POST['mdp']);
-            $mdp2 = htmlspecialchars($_POST['mdp2']);
-
-            // $pregMdp = preg_match('^(.{25,999}.{0,7}|[^0-9]*|[^A-Z]*|[^a-z]*|[a-zA-Z0-9]*)$', $mdp);
-            // $lowercase = preg_match('([^a-z]*)', $mdp);
-            // $number = preg_match('([^0-9]*)', $mdp);
-            // $spChar = preg_match('([a-zA-Z0-9]*)', $mdp);
-          
+            $mdp2 = htmlspecialchars($_POST['mdp2']);          
     
             if(!empty($email) && !empty($mdp) && !empty($mdp2)){//not empty input
                 
                 if(filter_var($email, FILTER_VALIDATE_EMAIL)){//valid email verification
 
-                    // if($uppercase || !$spChar || $lowercase || $number || strlen($mdp) < 8 || strlen($mdp) < 20) {
-                    if(preg_match('^(.{25,999}.{0,8}|[^0-9]*|[^A-Z]*|[^a-z]*|[a-zA-Z0-9]*)$', $mdp)) {
+                    if(!preg_match('/^(.{25,999}.{0,8}|[^0-9]*|[^A-Z]*|[^a-z]*|[a-zA-Z0-9]*)$/', $mdp)) {
+                        //obliges uppercase and special charactere
 
-                        if($mdp!==$mdp2){
+                        if($mdp===$mdp2){//valid corresponding password
                             
                             $select = $bdd->prepare("SELECT * FROM user WHERE email=?");
                             $select->execute([$email]);
         
                             $count = $select->rowcount();
         
-                            if($count === 0){
+                            if($count === 0){//verify that the account do not exist
         
                                 $mdphash = password_hash($mdp, PASSWORD_DEFAULT);
                                 /*insertion in db*/
@@ -57,7 +51,7 @@
 
                                     $_SESSION['id'] = $newUser['id'];
 
-                                // header('Location: index.php');
+                                header('Location: index.php');
 
                                 static::$success='Bienvenue sur BVB auto';
                                 }

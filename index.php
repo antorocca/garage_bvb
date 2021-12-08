@@ -19,7 +19,7 @@ include('include/header.php');
 </section>
 
 <section class="partner">
-    <img src="assets/pictures/garage_premier.png" alt="logo_garage_premier">
+    <img class="gp-logo" src="assets/pictures/garage_premier.png" alt="logo_garage_premier">
     <img src="assets/pictures/total.png" alt="logo_total">    
 </section>
 

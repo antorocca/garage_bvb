@@ -1,3 +1,4 @@
+//slider in car.php
 const items = document.querySelectorAll('.img-sld');
 const nbSlide = items.length;
 const suivant = document.querySelector('.btn-right-sld');
@@ -31,3 +32,4 @@ function slidePrecedent(){
     items[count].classList.add('active');
 }
 precedent.addEventListener('click', slidePrecedent);
+
