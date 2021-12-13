@@ -47,5 +47,6 @@ include('include/header.php');
         </div>
     </article>
 </section>
+
 <script src="assets/js/app.js"></script>
 <?php include('include/footer.php'); ?>

@@ -1,5 +1,7 @@
 :root{
     --base-yellow: #FFD900;
+    --base-yellow-op: rgba(255, 217, 0, 0.65);
+    --base-yellow-op2: rgba(255, 217, 0, 0.85);
     --base-txt-color: #000000;
     --base-grey: #d4d4d4;
     --marg-top-element: 2vh; /* ? */
@@ -137,7 +139,8 @@ header>nav>a:hover{
 .garage{
     background:no-repeat 50% 60% url(../pictures/garageBVB.jpg);
     background-size:100%;
-    box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.322);display:flex;
+    box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.322);
+    display:flex;
     justify-content:right;
     align-items: center;
     transition:0.2s;
@@ -153,13 +156,13 @@ header>nav>a:hover{
     width:35%;
     padding:7vh 2vw;
     margin:0 0;
-    background: rgba(255, 217, 0, 0.65);
+    background: var(--base-yellow-op);
     cursor: default;
     clip-path: polygon(30% 0, 100% 0%, 100% 100%, 0% 100%);
     transition:0.2s;
 }
 .garage:hover>.sh-txt{
-    background: rgba(255, 217, 0, 0.85);
+    background: var(--base-yellow-op2);
     clip-path: polygon(22% 0, 100% 0, 100% 100%, 0% 100%);
 }
 
@@ -201,7 +204,6 @@ header>nav>a:hover{
     justify-content: space-around;
     align-items: center;
     padding:1vh 0;
-    box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.322);
 }
 .partner>img{
     width:20%;
@@ -225,13 +227,13 @@ header>nav>a:hover{
     width:35%;
     padding:7vh 2vw;
     margin:0 0;
-    background: rgba(255, 217, 0, 0.65);
+    background: var(--base-yellow-op);
     cursor: default;
     clip-path: polygon(0 0, 71% 0, 100% 100%, 0 100%);
     transition:0.2s;
 }
 .concession:hover>.c-txt{
-    background: rgba(255, 217, 0, 0.85);
+    background: var(--base-yellow-op2);
     clip-path: polygon(0 0, 80% 0, 100% 100%, 0% 100%);
 }
 .c-txt>p, .c-txt>p{
@@ -256,7 +258,7 @@ header>nav>a:hover{
     justify-content: space-between;
 }
 .contact:hover>.open-time{
-    background: rgba(255, 217, 0, 0.85);
+    background: var(--base-yellow-op2);
     clip-path: polygon(22% 0, 100% 0, 100% 100%, 0% 100%);
 
 }
@@ -270,7 +272,7 @@ header>nav>a:hover{
     width:35%;
     padding:4vh 2vw;
     margin:0 0;
-    background: rgba(255, 217, 0, 0.65);
+    background: var(--base-yellow-op);
     cursor: default;
     clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
     transition:0.2s;
@@ -406,12 +408,12 @@ header>nav>a:hover{
     margin:0vh auto;
     padding:12vh 0;
     text-align:center;
-    background: rgba(255, 217, 0, 0.65);
+    background: var(--base-yellow-op);
     clip-path: polygon(20% 0%, 100% 0, 80% 100%, 0% 100%);
     transition:0.2s;
 }
 .mandate:hover>div{
-    background: rgba(255, 217, 0, 0.85);
+    background: var(--base-yellow-op2);
     clip-path: polygon(15% 0%, 100% 0, 85% 100%, 0% 100%);
 }
 .mandate>div>h2{
@@ -713,7 +715,96 @@ header>nav>a:hover{
     margin-bottom:3vh;
 }
 
+/***************SERVICING.PHP*-**************/
+/*1st section presentation*/
+.pres-meca{
+    background: url('../pictures/garagiste1.0.jpeg');
+    background-size:cover;
+    background-position:50% 50%;
+    box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.322);
+}
+.pres-meca>div{
+    width:50%;
+    margin:0 auto;
+    background: var(--base-yellow-op);
+    padding:5vh 0 3vh 0;
+    clip-path: polygon(0 0, 85% 0, 100% 100%, 15% 100%);
+    transition:0.2s;
+}
+.pres-meca:hover>div{
+    background: var(--base-yellow-op2);
+    clip-path: polygon(0 0, 90% 0, 100% 100%, 10% 100%);
+}
+.pres-meca>div>h2{
+    margin:0;
+}
+.pres-meca>div>p{
+    margin:1vh 6vw;
+    text-align:center;
+    line-height:2.8vh;
+    font-size:1.1em;
+}
+.pres-meca>div>p:last-child{
+    padding-top:2vh;
+    font-weight:bold;
+}
+
+/*2nd section car's info left side*/
+.meca-info{
+    width:60%;
+    margin:2vh auto;
+    padding:2vh 1vw;
+    background:white;
+    border-radius:10px;
+    border: 2px solid var(--base-yellow);
+}
+.meca-info>form{
+    width:95%;
+    margin:0 auto;
+    display:flex;
+}
+.meca-info>form>div>label{
+    display:block;
+}
+.meca-info>form>div>input{
+    width:50%;
+    margin:1vh auto;
+    padding:0.7vh 0.5vw;
+}
+/*fieldset*/
+.revision>legend, .entretien>legend{
+    background: var(--base-yellow);
+    padding:2px 2px;
+}
+.revision{
+    margin-top:1vh;
+}
+.revision>input{
+    margin: 1vh 0 1vh 3vw;
+}
+.revision>label{
+    margin-left:0.5vw;
+}
+.entretien{
+    display:flex;
+    flex-wrap:wrap;
+}
+.entretien>label{
+    margin: 1vh 0.5vw 1vh 3vw;
+    position:relative;
+    bottom:2px;
+}
+/*calendar / right side*/
+.meca-info>form>div:last-child{
+    margin-left:2vw;
+}
+.meca-info>form>div:last-child>input{
+    background:var(--base-yellow);
+    border:1px solid black;
+    border-radius:5px;
+}
 /***************ADMIN.PHP***************/
+
 /*user table*/
 .user-admin{
     width: 95%;

@@ -36,7 +36,7 @@ if(!empty($_SESSION)){
         </div>
         <nav>
             <a href="">Révisions et entretien</a>
-            <a href="">Mécanique et Diagnostique</a>
+            <a href="meca.php">Réparation et Diagnostique</a>
             <a href="catalog.php">La concession auto</a>
         </nav>
     </header>
