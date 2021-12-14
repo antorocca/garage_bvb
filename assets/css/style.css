@@ -766,7 +766,7 @@ header>nav>a:hover{
 .meca-info>form>div>label{
     display:block;
 }
-.meca-info>form>div>input{
+.meca-info>form>div:first-child>input{
     width:50%;
     margin:1vh auto;
     padding:0.7vh 0.5vw;
@@ -797,11 +797,21 @@ header>nav>a:hover{
 /*calendar / right side*/
 .meca-info>form>div:last-child{
     margin-left:2vw;
+    width:35%;
 }
-.meca-info>form>div:last-child>input{
+.meca-info>form>div:last-child>input:last-child{
+    width:50%;
+    padding:0.8vh 0;
     background:var(--base-yellow);
     border:1px solid black;
     border-radius:5px;
+    cursor:pointer;
+}
+.meca-info>form>div:last-child>input:nth-child(2),
+.meca-info>form>div:last-child>select{
+    padding:0.7vh 0.5vw;
+    display:block;
+    margin-bottom:2vh;
 }
 /***************ADMIN.PHP***************/
 
