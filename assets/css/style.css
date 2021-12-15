@@ -9,7 +9,7 @@
 }
 body{
     font-family: 'Lato', sans-serif;
-    background: url('../pictures/bckgBVB.jpg');
+    background: var(--base-grey);
     background-size: cover;
 }
 
@@ -813,6 +813,29 @@ header>nav>a:hover{
     display:block;
     margin-bottom:2vh;
 }
+/***************SUCCESS.PHP***************/
+.suc-cont{
+    width:70%;
+    margin: 2vh auto;
+    background:white;
+    border:2px solid var(--base-yellow);
+    border-radius:10px;
+    text-align:center;
+}
+.suc-cont>h2{
+    margin-top:5vh;
+}
+.suc-cont>p{
+    margin-top:5vh;
+}
+.suc-cont>img{
+    width: 10%;
+    padding: 6vh 0 4vh 0;
+}
+.suc-cont>a{
+    display:block;
+    margin-bottom:3vh;
+}
 /***************ADMIN.PHP***************/
 
 /*user table*/
@@ -1176,3 +1199,4 @@ footer * {
 
 @media screen and (max-width: 600px) {
 }
+

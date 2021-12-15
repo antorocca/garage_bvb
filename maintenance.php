@@ -14,9 +14,9 @@ include('include/header.php');
 <section class="pres-meca">
     <div>
         <h2 class="cen-tit">Révision et entretien</h2>
-        <p>Pour rouler en toute sérénité, il est indispensable de veiller au bon entretien de son véhicule. C’est à la fois une question de <strong>confort et de sécurité.</strong> Respecter le carnet d’entretien constructeur et effectuer les <strong>révisions</strong> vous assure de conserver votre véhicule en bon état de fonctionnement en faisant réaliser les réparations nécessaires au moment où vous en avez besoin.</p>
-        <p>Faites confiance a <strong>BVB auto</strong> pour votre révision ou pour l'entretien de votre véhicule, nous vous garantissons des <strong>prix bas toute l'année.</strong> Notre équipe est formée en permanence pour apporter un soin personnalisé à votre voiture.</p>
-        <p>Remplissez ce formulaire ci dessous afin de préparez notre rendez-vous au mieux</p>
+        <p>Pour rouler en toute sérénité, il est indispensable de veiller au bon entretien de son véhicule. C’est à la fois une question de <strong>confort et de sécurité.</strong> Respecter le carnet d’entretien constructeur et effectuer les <strong>révisions</strong> vous assure de conserver votre véhicule en <strong>bon état</strong> de fonctionnement en faisant réaliser les réparations nécessaires au moment où vous en avez besoin.</p>
+        <p>Faites confiance à <strong>BVB auto</strong> pour votre révision ou pour l'entretien de votre véhicule, nous vous garantissons des <strong>prix bas toute l'année.</strong> Notre équipe est formée en permanence pour apporter un soin personnalisé à votre voiture.</p>
+        <p>Remplissez ce formulaire ci-dessous afin de préparer notre rendez-vous au mieux</p>
     </div>
 </section>
 <section class="meca-info">
@@ -34,27 +34,26 @@ include('include/header.php');
 
             <fieldset class="revision">
                 <legend>Effectuer une révision / vidange</legend>
-                <input type="radio" name="revision" value="yes">
+                <input type="radio" name="revision" value="Revision">
                     <label>Oui</label>
-                <input type="radio" name="revision" value="no">        
+                <input type="radio" name="revision" value="">        
                     <label>Non</label>
             </fieldset>
 
             <fieldset class="entretien">
                 <legend>Entretien</legend>
                 <label for="">Pneu</label>
-                <!--a tester si on les mets dans un tableau ou en solo-->
-                    <input type="checkbox" name="pneu" value="pneu">
+                    <input type="checkbox" name="pneu" value="Pneu">
                 <label for="">Plaquette</label>
-                    <input type="checkbox" name="plaquette" value="plaquette">
+                    <input type="checkbox" name="plaquette" value="Plaquette">
                 <label for="">Disque</label>
-                    <input type="checkbox" name="disque" value="disque">
+                    <input type="checkbox" name="disque" value="Disque">
                 <label for="">Batterie</label>
-                    <input type="checkbox" name="battery" value="batterie">
+                    <input type="checkbox" name="battery" value="Batterie">
                 <label for="">Climatisation</label>
-                    <input type="checkbox" name="clim" value="climatisation">
+                    <input type="checkbox" name="clim" value="Climatisation">
                 <label for="">Courroie de distribution</label>
-                    <input type="checkbox" name="distrib" value="distribution">
+                    <input type="checkbox" name="distrib" value="Distribution">
             </fieldset>
         </div>
         <div>
@@ -75,11 +74,9 @@ include('include/header.php');
         </div>
     </form>
     <?php
-        if(Rdv::$success){
-            echo '<p>' . $success . '</p>';
+        if(Rdv::$error){
+            echo '<p style="color:red;font-weight:bold;">' . Rdv::$error . '</p>';
         }
     ?>
-    <p>Vous recevrez bientot un email / message avec votre devis, il ne vous restera plus qu'a confirmer la date du rendez-vous !</p>
 </section>
-
 <?php include('include/footer.php'); ?>
