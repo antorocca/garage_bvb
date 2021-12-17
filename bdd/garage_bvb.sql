@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 10, 2021 at 10:12 AM
+-- Generation Time: Dec 17, 2021 at 09:56 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.19
 
@@ -56,6 +56,35 @@ INSERT INTO `car` (`id`, `brand`, `model`, `year`, `release-date`, `price`, `des
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `rdv`
+--
+
+CREATE TABLE `rdv` (
+  `id` int(11) NOT NULL,
+  `idUser` int(11) NOT NULL,
+  `brand` varchar(255) NOT NULL,
+  `model` varchar(255) NOT NULL,
+  `year` int(4) NOT NULL,
+  `service` varchar(255) NOT NULL,
+  `type` varchar(255) NOT NULL,
+  `date` date NOT NULL,
+  `hour` varchar(255) NOT NULL,
+  `commentary` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `rdv`
+--
+
+INSERT INTO `rdv` (`id`, `idUser`, `brand`, `model`, `year`, `service`, `type`, `date`, `hour`, `commentary`) VALUES
+(13, 14, 'Renault', 'clio', 2015, 'Revision', 'Pneu, Plaquette, Disque', '2021-12-23', '15h', 'refz'),
+(14, 2, 'Bmw', 'serie3 1.8 160ch', 2010, '', 'Pneu, Plaquette, Disque', '2021-12-22', '15h', 'eiruhgeiurzphbiuhbgp'),
+(15, 2, 'Renault', 'clio', 1999, 'Revision', 'Pneu, Distribution', '2021-12-15', '17h', 'bsgehgre'),
+(16, 2, 'Renault', 'clio', 1999, 'Revision', 'Pneu', '2021-12-29', '18h', 'gfzeeg');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -95,6 +124,13 @@ ALTER TABLE `car`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `rdv`
+--
+ALTER TABLE `rdv`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_idUser` (`idUser`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -111,10 +147,26 @@ ALTER TABLE `car`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `rdv`
+--
+ALTER TABLE `rdv`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `rdv`
+--
+ALTER TABLE `rdv`
+  ADD CONSTRAINT `fk_idUser` FOREIGN KEY (`idUser`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
