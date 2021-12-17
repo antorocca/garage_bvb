@@ -20,7 +20,7 @@ include('include/header.php');
     </div>
 </section>
 <section class="meca-info">
-    <h2 class="cen-tit">Mon véhicule</h2>
+    <h2 class="cen-tit">Prendre rendez-vous</h2>
     <form action="" method="post">
         <div>
             <label for="">Marque: </label>
@@ -57,6 +57,8 @@ include('include/header.php');
             </fieldset>
         </div>
         <div>
+            <label>Commentaire (facultatif):</label>
+                <textarea name="commentary" cols="30" rows="7"></textarea>
             <h4>Date et heure de rendez-vous:</h4>
             <input type="date" name="date">
             <select name="hour">

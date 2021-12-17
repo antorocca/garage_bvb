@@ -8,6 +8,7 @@ class Rdv{
 
         if(isset($_POST['sbmt'])){
             /*car's info*/
+            $user = $_SESSION['id'];
             $brand = htmlspecialchars($_POST['brand']);
             $model = htmlspecialchars($_POST['model']);
             $year = htmlspecialchars($_POST['year']);
@@ -47,6 +48,7 @@ class Rdv{
             /*appointment hour*/
             $date = htmlspecialchars($_POST['date']);
             $hour = htmlspecialchars($_POST['hour']);
+            $comment = htmlspecialchars($_POST['commentary']);
 
 
             if(!empty($brand) && !empty($model) && !empty($year)){//must have brand...
@@ -60,10 +62,10 @@ class Rdv{
 
                     if($count === 0){
                         //insert in DB
-                        $insert = $bdd->prepare('INSERT INTO rdv(brand, model, `year`, `service`, `type`, `date`, hour) VALUES(?, ?, ?, ?, ?, ?, ?) ');
-                        $insert ->execute([$brand, $model, $year, $revision, $typeS, $date, $hour]);
+                        $insert = $bdd->prepare('INSERT INTO rdv(idUser, brand, model, `year`, `service`, `type`, `date`, hour, commentary) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)');
+                        $insert ->execute([$user, $brand, $model, $year, $revision, $typeS, $date, $hour, $comment]);
 
-                        header('Location: success.php');
+                        header('Location: success.php?id=' . $_SESSION['id'] . '');
                     }
                     else{
                         static::$error = "La date de rendez-vous n'est pas disponible";

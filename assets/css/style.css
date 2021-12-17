@@ -799,9 +799,16 @@ header>nav>a:hover{
     margin-left:2vw;
     width:35%;
 }
-.meca-info>form>div:last-child>input:last-child{
+.meca-info>form>div:last-child>textarea{
+    margin-top:1vh;
+    resize:none;
+}
+.meca-info>form>div:last-child>input[type="date"]{/*input date*/
+    padding:0.7vh 0.2vw;
+}
+.meca-info>form>div:last-child>input:last-child{/*input submit*/
     width:50%;
-    padding:0.8vh 0;
+    padding:1vh 0;
     background:var(--base-yellow);
     border:1px solid black;
     border-radius:5px;
@@ -811,8 +818,9 @@ header>nav>a:hover{
 .meca-info>form>div:last-child>select{
     padding:0.7vh 0.5vw;
     display:block;
-    margin-bottom:2vh;
+    margin:2vh 0;
 }
+
 /***************SUCCESS.PHP***************/
 .suc-cont{
     width:70%;
@@ -828,11 +836,11 @@ header>nav>a:hover{
 .suc-cont>p{
     margin-top:5vh;
 }
-.suc-cont>img{
+.suc-cont>article>img{
     width: 10%;
     padding: 6vh 0 4vh 0;
 }
-.suc-cont>a{
+.suc-cont>article>a{
     display:block;
     margin-bottom:3vh;
 }
@@ -979,7 +987,6 @@ header>nav>a:hover{
     border-radius:5px;
     border:none;
     padding:1.5vh 0;
-
 }
 /***************FOOTER.PHP***************/
 footer{
