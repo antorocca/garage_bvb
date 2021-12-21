@@ -15,11 +15,13 @@ include('include/header.php');
         <p>Chez BVB AUTO, découvrez aussi toutes les promos auto à ST MAXIMIN LA STE BAUME. N'hésitez plus, rendez-vous chez BVB AUTO pour le diagnostic de votre véhicule à ST MAXIMIN LA STE BAUME.</p>
         <a href="">Prendre rendez-vous</a>
     </div>
-    
 </section>
+
+
 
 <section class="partner">
     <img class="gp-logo" src="assets/pictures/garage_premier.png" alt="logo_garage_premier">
+    <div class="triangle"></div>
     <img src="assets/pictures/total.png" alt="logo_total">    
 </section>
 

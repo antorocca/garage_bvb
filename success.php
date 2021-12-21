@@ -17,21 +17,36 @@ include('include/header.php');
     <p>Vous recevrez bientôt un email / message avec votre devis et ce récapitulatif, il ne vous restera plus qu'a confirmer la date du rendez-vous !</p>
     <article>
         <h3 class="cen-tit">Récapitulatif</h3>
-        <p>Nom: <?=$recap['name']?></p>
-        <p>Prénom: <?=$recap['firstname']?></p>
-        <p>Véhicule: <?=$recap['brand'] . ' ' . $recap['model'] . ' ' . $recap['year']?></p>
-        <p>Rendez-vous le <?=$recap['date']?> à <?=$recap['hour']?></p>
-        <p>Commentaire: <?=$recap['commentary']?></p>
+        <!-- <div>
+            <p>Nom: </p>
+            <p>Prénom: </p>
+            <p>Véhicule: </p>
+            <p>Service: </p>
+            <p>Rendez-vous le: </p>
+            <p>Commentaire: </p>
+        </div> -->
+
+        <div>
+            <p>M./Mme. <?=$recap['name'] . ' ' . $recap['firstname']?></p>
+            <p></p>
+            <p>Véhicule:<br><?=$recap['brand'] . ' ' . $recap['model'] . ' ' . $recap['year']?></p>
+            <p>Service:<br><?=$recap['service']?><?php if($recap['type'] !== null){echo ', entretien';} ?></p>
+            <?php 
+            if($recap['type'] !== null){
+                echo '<p>Entretien:<br>' . $recap['type'] . '</p>';
+            } ?>
+            
+            <p>Date:<br><?=$recap['date']?> à <?=$recap['hour']?></p>
+            <p>Commentaire:<br><?=$recap['commentary']?></p>
+        </div>
+        
         <img src="assets/pictures/bvb_logo.svg" alt="BVB logo">
         <a href="index.php">retour à l'accueil</a>
+
+
+
+
     </article>
-    <?php 
-    echo '<pre>';
-    var_dump($recap);
-    echo '</pre><br><br><br><br><br><br>'; 
-    echo '<pre>';
-    var_dump($_SESSION['id']);
-    echo '</pre>'; 
-    ?>
+    
 </section>
 <?php include('include/footer.php'); ?>

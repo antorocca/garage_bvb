@@ -12,7 +12,9 @@ body{
     background: var(--base-grey);
     background-size: cover;
 }
-
+p{
+    line-height:125%;
+}
 .cen-tit{
     text-align:center;
 }
@@ -144,6 +146,7 @@ header>nav>a:hover{
     justify-content:right;
     align-items: center;
     transition:0.2s;
+    border-bottom:8px solid var(--base-yellow);
 }
 
 /*responsive img*/
@@ -152,7 +155,6 @@ header>nav>a:hover{
 }
 /*txt + button*/
 .sh-txt{
-    line-height:150%;
     width:35%;
     padding:7vh 2vw;
     margin:0 0;
@@ -199,12 +201,28 @@ header>nav>a:hover{
 }
 
 /*2nd section (partner)*/
+.partner>div{
+    position:relative;
+    bottom:5vh;
+}
+
+.triangle {
+    display: center;
+    width: 0;
+    height: 0;
+    border-left: 70px solid transparent;
+    border-right: 70px solid transparent;
+    border-top: 45px solid var(--base-yellow);
+}
+
 .partner{
     display:flex;
     justify-content: space-around;
     align-items: center;
     padding:1vh 0;
+    overflow:hidden;
 }
+
 .partner>img{
     width:20%;
 }
@@ -221,9 +239,11 @@ header>nav>a:hover{
     display:flex;
     justify-content:left;
     align-items: center;
+    border-width:8px 0 8px 0;
+    border-style:solid;
+    border-color:var(--base-yellow);
 }
 .c-txt{
-    line-height:150%;
     width:35%;
     padding:7vh 2vw;
     margin:0 0;
@@ -256,6 +276,7 @@ header>nav>a:hover{
     box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.322);
     display:flex;
     justify-content: space-between;
+    border-top:8px solid var(--base-yellow);
 }
 .contact:hover>.open-time{
     background: var(--base-yellow-op2);
@@ -268,7 +289,6 @@ header>nav>a:hover{
 }
 /*opening-time in contact div */
 .open-time{
-    line-height:150%;
     width:35%;
     padding:4vh 2vw;
     margin:0 0;
@@ -501,12 +521,17 @@ header>nav>a:hover{
     height:min-content;
     margin-left:3vw;
     width:50%;
+    clip-path: polygon(100% 0, 100% 100%, 95% 14%, 95% 13%, 94% 10%, 93% 8%, 91% 6%, 89% 5%, 0 0);
     /* border:2px solid black; */
     border-radius: 20px;
-    clip-path: polygon(100% 0, 100% 100%, 95% 14%, 95% 13%, 94% 10%, 93% 8%, 91% 6%, 89% 5%, 0 0);
     padding-left:1.5vw;
     transition:0.4s;
 }
+
+.unfold{
+    clip-path: polygon(100% 0, 85% 100%, 0 100%, 0 100%, 0 100%, 0 100%, 0 100%, 0 100%, 0 0);
+}
+
 /* .txt-ann:hover{
     clip-path: polygon(100% 0, 85% 100%, 0 100%, 0 100%, 0 100%, 0 100%, 0 100%, 0 100%, 0 0);
     border-top-right-radius: none;
@@ -741,7 +766,6 @@ header>nav>a:hover{
 .pres-meca>div>p{
     margin:1vh 6vw;
     text-align:center;
-    line-height:2.8vh;
     font-size:1.1em;
 }
 .pres-meca>div>p:last-child{
@@ -823,7 +847,7 @@ header>nav>a:hover{
 
 /***************SUCCESS.PHP***************/
 .suc-cont{
-    width:70%;
+    width:60%;
     margin: 2vh auto;
     background:white;
     border:2px solid var(--base-yellow);
@@ -834,10 +858,23 @@ header>nav>a:hover{
     margin-top:5vh;
 }
 .suc-cont>p{
-    margin-top:5vh;
+    margin:3vh 0;
+}
+.suc-cont>article{
+    width:40%;
+    margin:0 auto;
+}
+.suc-cont>article>div{
+    /* display:inline-block; */
+    width:49%;
+    margin:0 auto;
+    text-align:left;
+}
+.suc-cont>article>div>p{
+    overflow-wrap:break-word;
 }
 .suc-cont>article>img{
-    width: 10%;
+    width: 25%;
     padding: 6vh 0 4vh 0;
 }
 .suc-cont>article>a{
@@ -1116,7 +1153,6 @@ footer * {
     /*index.php*/
     .sh-txt, .c-txt{
         padding: 3vh 2vw;
-        line-height: 120%;
     }
     .sh-txt>a, .c-txt>a{
         width:53%;
@@ -1206,4 +1242,3 @@ footer * {
 
 @media screen and (max-width: 600px) {
 }
-

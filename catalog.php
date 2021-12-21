@@ -34,7 +34,7 @@ include('include/header.php');
                 <img src="assets/pictures/'. $car['brandLogo'] . '">
                 <h2>' . $car['price'] . ' €</h2>
             </div>
-            <div class="txt-ann">
+            <div class="txt-ann fold">
                 <h3>' . $car['model'] . '<i class="far fa-hand-pointer"></i></h3>
                 <h4>' . $car['brand'] . '</h4>
                 <div>
