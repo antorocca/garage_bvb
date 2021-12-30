@@ -37,6 +37,7 @@ include('include/header.php');
 
 <section class="partner">
     <img src="assets/pictures/bosch.png" alt="logo_bosch">
+    <div class="triangle"></div>
     <img src="assets/pictures/ks_tools.png" alt="logo_ks_tools">
 </section>
 

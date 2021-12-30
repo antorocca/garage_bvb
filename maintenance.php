@@ -36,7 +36,7 @@ include('include/header.php');
                 <legend>Effectuer une révision / vidange</legend>
                 <input type="radio" name="revision" value="Revision">
                     <label>Oui</label>
-                <input type="radio" name="revision" value="Entretien">        
+                <input type="radio" name="revision" value="">        
                     <label>Non</label>
             </fieldset>
 

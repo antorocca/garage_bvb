@@ -57,5 +57,5 @@ include('include/header.php');
     ?>
     
 </section>
-<script src="assets/js/catalog.js" defer></script>
+<script src="assets/js/app.js" defer></script>
 <?php include('include/footer.php'); ?>

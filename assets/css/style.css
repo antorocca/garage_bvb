@@ -203,16 +203,16 @@ header>nav>a:hover{
 /*2nd section (partner)*/
 .partner>div{
     position:relative;
-    bottom:5vh;
+    bottom:6vh;
 }
 
 .triangle {
     display: center;
     width: 0;
     height: 0;
-    border-left: 70px solid transparent;
-    border-right: 70px solid transparent;
-    border-top: 45px solid var(--base-yellow);
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 30px solid var(--base-yellow);
 }
 
 .partner{
@@ -881,7 +881,57 @@ header>nav>a:hover{
     display:block;
     margin-bottom:3vh;
 }
+
+
+/**************MY-ACCOUNT.php****************/
+.account-sec{
+    width:70%;
+    margin: 2vh auto;
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    display:flex;
+    flex-wrap: wrap;
+}
+.account-sec>article>h3{
+    background: var(--base-yellow);
+    padding: 0.7vh 1vw;
+    margin:0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.account-sec>article{
+    width:48%;
+    margin:1vh 0.9%;
+    border: 1px solid black;
+    border-radius:10px;
+}
+.account-sec>article>p, .account-sec>p{
+    padding: 1.5vh 1vw;
+    margin:0;
+}
+.account-sec>article>label, .account-sec>article>input{
+    margin: 1.5vh 1vw;
+    display: block;
+}
+.account-sec>a{
+    text-decoration: none;
+    color:black;
+    background:var(--base-yellow);
+    height:min-content;
+    border-radius:5px;
+    padding:1vh 1vw;
+    margin:0;
+    font-weight:bold;
+    margin:0 auto;
+    position:relative;
+    top:6vh;
+    border:1px solid black;
+}
+
+/****************************************/
 /***************ADMIN.PHP***************/
+/**************************************/
 
 /*user table*/
 .user-admin{

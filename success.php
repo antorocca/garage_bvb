@@ -17,27 +17,22 @@ include('include/header.php');
     <p>Vous recevrez bientôt un email / message avec votre devis et ce récapitulatif, il ne vous restera plus qu'a confirmer la date du rendez-vous !</p>
     <article>
         <h3 class="cen-tit">Récapitulatif</h3>
-        <!-- <div>
-            <p>Nom: </p>
-            <p>Prénom: </p>
-            <p>Véhicule: </p>
-            <p>Service: </p>
-            <p>Rendez-vous le: </p>
-            <p>Commentaire: </p>
-        </div> -->
-
         <div>
             <p>M./Mme. <?=$recap['name'] . ' ' . $recap['firstname']?></p>
             <p></p>
             <p>Véhicule:<br><?=$recap['brand'] . ' ' . $recap['model'] . ' ' . $recap['year']?></p>
-            <p>Service:<br><?=$recap['service']?><?php if($recap['type'] !== null){echo ', entretien';} ?></p>
+            <p>Service:<br><?=$recap['service']?><?php if(isset($recap['type'])){echo ', entretien';} ?></p>
             <?php 
-            if($recap['type'] !== null){
+            if(isset($recap['type'])){
                 echo '<p>Entretien:<br>' . $recap['type'] . '</p>';
             } ?>
             
             <p>Date:<br><?=$recap['date']?> à <?=$recap['hour']?></p>
-            <p>Commentaire:<br><?=$recap['commentary']?></p>
+
+            <?php 
+            if(isset($recap['commentary'])){
+                echo '<p>Commentaire:<br>' . $recap['commentary'] . '</p>';
+            } ?>
         </div>
         
         <img src="assets/pictures/bvb_logo.svg" alt="BVB logo">
