@@ -11,11 +11,8 @@ $account = $i->fetchAll();
 
 include('include/head.php');
 include('include/header.php');
-
-/*put the date in array for the format*/
-foreach($account as $date){
-    $d = explode("-", $date['date']);
-}
+  
+// }
 // echo '<pre>';
 // var_dump($account);
 // echo '</pre>';
@@ -28,6 +25,9 @@ foreach($account as $date){
     echo '<article>
         <h3>Mes rendez-vous</h3>';
         foreach($account as $rdv){
+
+            $d = explode("-", $rdv['date']);
+
             if($rdv['date'] > date('Y-m-d')){
                 echo '<p>Le ' . $d[2] . '/' . $d[1] . '/' . $d[0] . ' pour la ' . $rdv['service'];
                     if(isset($rdv['type'])){
@@ -49,6 +49,9 @@ foreach($account as $date){
     echo '<article>
             <h3>Historique</h3>';
     foreach($account as $Hrdv){
+
+        $d = explode("-", $rdv['date']);
+        
         if($Hrdv['date'] < date('Y-m-d')){
             echo '
                 <p>Le ' . $d[2] . '/' . $d[1] . '/' . $d[0] . ' pour la ' . $Hrdv['service'];
@@ -64,6 +67,7 @@ foreach($account as $date){
             echo '<p>Aucun ancien rendez-vous</p>';
         }
     }
+
     ?>
     </article>
 
