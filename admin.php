@@ -12,6 +12,10 @@ $stmtU = $bdd ->prepare('SELECT * FROM user ORDER BY `role` ASC');
 $stmtU->execute();
 $allUsers = $stmtU->fetchAll();
 
+$stmtC = $bdd ->prepare('SELECT * FROM car');
+$stmtC->execute();
+$allCars = $stmtC->fetchAll();
+
 include('include/head.php');
 include('include/header.php');
 
@@ -36,11 +40,22 @@ include('include/header.php');
 </section>
 
 <h2 class="cen-tit">Liste des véhicules</h2>
-<section>
-    <a href="createC.php">Ajouter un véhicule</a>
- <!-- ici foreach des vehicule -->
+<section class='user-admin'>
+    <a href="createU.php">Créer une nouvelle annonce</a>
+    <?php
+        foreach($allCars as $car){
+            echo'
+            <div class="user-tab">
+                <p>' . $car['id'] . '</p>
+                <p>' . $car['brand'] . '</p>
+                <p>' . $car['model'] . '</p>
+                <p>' . $car['year'] . '</p>
+                <a href="updateU.php?id=' . $car['id'] . '">Voir / Modifier</a>
+                <a href="deleteU.php?id=' . $car['id'] . '">Supprimer</a>
+            </div>';
+        }
+    ?>
 </section>
-
 <?php
 include('include/footer.php');
 ?>

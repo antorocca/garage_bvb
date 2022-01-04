@@ -2,7 +2,7 @@
 session_start();
     require_once 'function/connexion.php';
     require_once 'function/database.php';
-    Submit::submitRegister();
+    Submit::register();
     include('include/head.php');
     include('include/header.php');
 ?> 

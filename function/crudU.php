@@ -46,11 +46,11 @@ class CrudU{
     
                         }
                         else{
-                            static::$erreur = '*Vous etes déjà inscrit veuillez vous connecter !';
+                            static::$erreur = '*Cet e-mail existe déjà';
                         }
                     }
                     else{
-                    static::$erreur="*Les mots de passes ne sont pas identique !";
+                        static::$erreur="*Les mots de passes ne sont pas identique";
                     }
                 }
                 else{
@@ -66,7 +66,7 @@ class CrudU{
     public static function deleteUser(){
 
         $bdd = Database::connect();
-        $id = $_GET['id'];
+        $id = htmlspecialchars($_GET['id']);
 
         if(isset($_POST['deleteInput'])){
             $delete = $bdd-> prepare('DELETE FROM user WHERE id= ?');
@@ -82,7 +82,6 @@ class CrudU{
 
         
         $user = $bdd->prepare('SELECT * FROM user WHERE id = ?');
-        $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $user->execute([$id]);
 
         $userDetails = $user->fetch();

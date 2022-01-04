@@ -4,63 +4,69 @@ require_once 'function/database.php';
 
 $bdd = Database::connect();
 
-$i = $bdd->prepare('SELECT * FROM user INNER JOIN rdv WHERE rdv.idUser = ? AND user.id = ?');
-$i->execute([$_SESSION['id'], $_SESSION['id']]);
-$account = $i->fetch();
+$i = $bdd->prepare('SELECT * FROM user INNER JOIN rdv ON user.id = rdv.idUser WHERE user.id = ?');
+$i->execute([$_SESSION['id']]);
+$account = $i->fetchAll();
 
 
 include('include/head.php');
 include('include/header.php');
+
+/*put the date in array for the format*/
+foreach($account as $date){
+    $d = explode("-", $date['date']);
+}
+// echo '<pre>';
+// var_dump($account);
+// echo '</pre>';
 ?>
 
 <section class="account-sec">
     <?php
     /*RENDEZ VOUS SECTION*/
-    /*put the date in array for the format*/
-    $d = explode("-", $account['date']);
     /*construction of rendez-vous phrase and div*/
     echo '<article>
-            <h3>Mes rendez-vous</h3>';
-    if($account['date'] > date('Y-m-d')){
-        echo '
-            <p>Le ' . $d[2] . '/' . $d[1] . '/' . $d[0] . ' pour la ' . $account['service'];
-            if(isset($account['type'])){
-                echo ' et l\'entretien de: ';
+        <h3>Mes rendez-vous</h3>';
+        foreach($account as $rdv){
+            if($rdv['date'] > date('Y-m-d')){
+                echo '<p>Le ' . $d[2] . '/' . $d[1] . '/' . $d[0] . ' pour la ' . $rdv['service'];
+                    if(isset($rdv['type'])){
+                        echo ' et l\'entretien de: ';
+                    }
+                    else{
+                        echo ' de: ';
+                    }
+                echo $rdv['brand'] . ' ' . $rdv['model'] . '</p>';
             }
             else{
-                echo ' de: ';
+                echo '<p>Aucun rendez-vous</p>';
             }
-        echo $account['brand'] . ' ' . $account['model'] . '</p>
-        </article>';
-    }
-    else{
-        echo '<p>Aucun rendez-vous</p>
-        </article>';
-    }
+        }
+        echo'</article>';
 
     /*HISTORIQUE SECTION*/
-    /*put the date in array for the format*/
-    $d = explode("-", $account['date']);
     /*construction of rendez-vous div*/
     echo '<article>
             <h3>Historique</h3>';
-    if($account['date'] < date('Y-m-d')){
-        echo '
-            <p>Le ' . $d[2] . '/' . $d[1] . '/' . $d[0] . ' pour la ' . $account['service'];
-            if(isset($account['type'])){
-                echo ' et l\'entretien de: ';
-            }
-            else{
-                echo ' de: ';
-            }
-        echo $account['brand'] . ' ' . $account['model'] . '</p>
-        </article>';
-    }
-    else{
-        echo '<p>Aucun ancien rendez-vous</p>
-        </article>';
+    foreach($account as $Hrdv){
+        if($Hrdv['date'] < date('Y-m-d')){
+            echo '
+                <p>Le ' . $d[2] . '/' . $d[1] . '/' . $d[0] . ' pour la ' . $Hrdv['service'];
+                if(isset($Hrdv['type'])){
+                    echo ' et l\'entretien de: ';
+                }
+                else{
+                    echo ' de: ';
+                }
+            echo $Hrdv['brand'] . ' ' . $Hrdv['model'] . '</p>';
+        }
+        else{
+            echo '<p>Aucun ancien rendez-vous</p>';
+        }
     }
     ?>
+    </article>
+
     <article>
         <h3>Modifier mes informations</h3>
         <p>Entrez votre mot de passe pour pouvoir modifier vos informations.</p>

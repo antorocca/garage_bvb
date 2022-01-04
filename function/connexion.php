@@ -7,7 +7,7 @@
     public static $successCo = '';
     public static $ban = ''; 
 
-    public static function submitRegister(){
+    public static function register(){
         
         $bdd = Database::connect();
         
@@ -66,7 +66,7 @@
                         }
                     }/*****/
                     else{
-                        static::$erreur="*Le mot de passe doit contenir 8 caractères dont 1 majuscule et 1 caractere spécial (#=+&...)";
+                        static::$erreur="*Le mot de passe doit contenir 8 caractères dont une majuscule et un caractere spécial (#=+&...)";
                     }
                 }
                 else{
@@ -84,8 +84,8 @@
         $bdd = Database::connect();
 
         if(isset($_POST['connexion'])){
-            $email = $_POST['email'];
-            $mdp = $_POST['mdp'];
+            $email = htmlspecialchars($_POST['email']);
+            $mdp = htmlspecialchars($_POST['mdp']);
             
             if(!empty($email) && !empty($mdp)){
                 
